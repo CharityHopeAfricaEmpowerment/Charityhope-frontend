@@ -11,38 +11,62 @@
       background-color: #f8f8f4; /* blanc cassé */
       color: #002147; /* bleu marine */
     }
+
     header {
       background-color: #002147;
       color: #d4af37; /* or */
       padding: 20px;
       text-align: center;
     }
+
     header img {
       width: 120px;
       border-radius: 50%;
       margin-bottom: 10px;
     }
+
     header h1 {
       margin: 0;
       font-size: 1.8em;
     }
+
     header p {
       font-style: italic;
       font-size: 1.1em;
       color: #f8f8f4;
     }
+
+    /* --- Section accueil avec logo en fond transparent --- */
     section {
-      padding: 30px 20px;
+      position: relative;
+      padding: 60px 20px;
       text-align: center;
-      background-image: url('logo-cha.png'); /* ton logo comme fond */
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 400px;
+      overflow: hidden;
+      min-height: 400px;
     }
+
+    section::before {
+      content: "";
+      background: url('logo-cha.png') center/contain no-repeat;
+      opacity: 0.08; /* transparence douce */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    section h2, section p {
+      position: relative;
+      z-index: 1;
+    }
+
     h2 {
       color: #d4af37;
+      margin-bottom: 15px;
     }
+
     .btn {
       background-color: #d4af37;
       color: #002147;
@@ -52,7 +76,10 @@
       border-radius: 25px;
       cursor: pointer;
       margin-top: 15px;
+      position: relative;
+      z-index: 1;
     }
+
     footer {
       background-color: #002147;
       color: #f8f8f4;
@@ -70,7 +97,8 @@
   </header>
 
   <section>
-    <!-- ton logo sert déjà d’image de fond -->
+    <h2>Bienvenue</h2>
+    <p>Ensemble, nous organisons des conférences, galas, festivals et initiatives pour l’autonomisation en Afrique.</p>
   </section>
 
   <footer>
