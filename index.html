@@ -164,23 +164,55 @@
 
     <!-- Formulaire de contact -->
 <form action="mailto:infocharityhopeafrica@gmail.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; text-align:left;">
+  <l<!-- Formulaire de contact intelligent -->
+<form id="contactForm" style="max-width:500px; margin:0 auto; text-align:left;">
   <label>Nom complet :</label>
-  <input type="text" placeholder="Votre nom" required
+  <input type="text" id="name" placeholder="Votre nom" required
          style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
 
   <label>Email :</label>
-  <input type="email" placeholder="Votre adresse email" required
+  <input type="email" id="email" placeholder="Votre adresse email" required
          style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
 
+  <label>Sujet :</label>
+  <select id="subject" style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+    <option value="general">Informations générales</option>
+    <option value="business">Business Class Women</option>
+    <option value="don">Dons & Soutien</option>
+  </select>
+
   <label>Message :</label>
-  <textarea placeholder="Votre message..." rows="4" required
+  <textarea id="message" placeholder="Votre message..." rows="4" required
             style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
 
-  <button type="submit"
+  <button type="button"
+          onclick="sendEmail()"
           style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
     Envoyer le message
   </button>
 </form>
+
+<script>
+  function sendEmail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    let to = "";
+
+    if (subject === "general") {
+      to = "infocharityhopeafrica@gmail.com";
+    } else if (subject === "business") {
+      to = "infobusinesclassewomen@gmail.com";
+    } else if (subject === "don") {
+      to = "donatecharity&hopeafrica@gmail.com";
+    }
+
+    const mailtoLink = `mailto:${to}?subject=Message de ${name}&body=De : ${name} (${email})%0D%0A%0D%0A${message}`;
+    window.location.href = mailtoLink;
+  }
+</script>
 
       <label>Email :</label>
       <input type="email" placeholder="Votre adresse email" required
