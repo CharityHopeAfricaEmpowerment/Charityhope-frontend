@@ -48,7 +48,7 @@
     section::before {
       content: "";
       background: url('logo-cha.png') center/contain no-repeat;
-      opacity: 0.08; /* transparence douce */
+      opacity: 0.25; /* plus visible */
       position: absolute;
       top: 0;
       left: 0;
@@ -79,23 +79,37 @@
       position: relative;
       z-index: 1;
     }
-<!-- Section Nos Actions -->
-  <section id="actions" style="background-color:#fefcf8; padding:60px 20px;">
-    <h2 style="color:#002147; margin-bottom:40px;">Nos Actions</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
 
-      <!-- Action 1 -->
-    <!-- Section À propos -->
+    footer {
+      background-color: #002147;
+      color: #f8f8f4;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-cha.png" alt="Logo Charity & Hope Africa Empowerment">
+    <h1>Charity & Hope Africa Empowerment</h1>
+    <p>Connecter, Inspirer, Transformer l’Afrique 🌍</p>
+  </header>
+
+  <section id="accueil">
+    <h2>Bienvenue</h2>
+    <p>Ensemble, nous organisons des conférences, galas, festivals et initiatives pour l’autonomisation en Afrique.</p>
+  </section>
+
+  <!-- Section À propos -->
   <section id="apropos" style="padding:60px 20px; background-color:#f8f8f4; text-align:center;">
     <h2 style="color:#0b1a40; margin-bottom:30px;">À propos de nous</h2>
     <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px;">
 
-      <!-- Image à gauche -->
       <img src="https://cdn.pixabay.com/photo/2016/11/18/12/49/africa-1833191_1280.jpg" 
            alt="Afrique solidaire" 
            style="width:350px; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
 
-      <!-- Texte à droite -->
       <div style="max-width:500px; text-align:left;">
         <h3 style="color:#d4af37;">Charity & Hope Africa Empowerment</h3>
         <p style="line-height:1.6;">
@@ -116,27 +130,30 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Nos Actions -->
+  <section id="actions" style="background-color:#fefcf8; padding:60px 20px;">
+    <h2 style="color:#002147; margin-bottom:40px;">Nos Actions</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+
       <div style="background:#fff; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:280px; padding:25px; text-align:center;">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Éducation" style="width:80px; margin-bottom:15px;">
         <h3 style="color:#0b1a40;">Éducation & Formation</h3>
         <p>Nous offrons des programmes éducatifs et des formations pour les jeunes et les femmes afin de développer des compétences durables.</p>
       </div>
 
-      <!-- Action 2 -->
       <div style="background:#fff; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:280px; padding:25px; text-align:center;">
         <img src="https://cdn-icons-png.flaticon.com/512/2951/2951321.png" alt="Autonomisation" style="width:80px; margin-bottom:15px;">
         <h3 style="color:#0b1a40;">Autonomisation Économique</h3>
         <p>Nous soutenons les initiatives entrepreneuriales locales et encourageons l’indépendance financière des communautés.</p>
       </div>
 
-      <!-- Action 3 -->
       <div style="background:#fff; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:280px; padding:25px; text-align:center;">
         <img src="https://cdn-icons-png.flaticon.com/512/3063/3063828.png" alt="Santé" style="width:80px; margin-bottom:15px;">
         <h3 style="color:#0b1a40;">Santé & Bien-être</h3>
         <p>Nous menons des campagnes de sensibilisation et des actions pour promouvoir la santé et le bien-être dans les zones défavorisées.</p>
       </div>
 
-      <!-- Action 4 -->
       <div style="background:#fff; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:280px; padding:25px; text-align:center;">
         <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Innovation" style="width:80px; margin-bottom:15px;">
         <h3 style="color:#0b1a40;">Innovation & Technologie</h3>
@@ -145,7 +162,8 @@
 
     </div>
   </section>
-    <!-- Section Contact -->
+
+  <!-- Section Contact -->
   <section id="contact" style="padding:60px 20px; background-color:#002147; color:#f8f8f4; text-align:center;">
     <h2 style="color:#d4af37; margin-bottom:30px;">Contactez-nous</h2>
     <p style="max-width:650px; margin:0 auto 30px;">
@@ -153,104 +171,57 @@
       Écrivez-nous dès aujourd’hui — nous serons heureux de vous répondre 🌍
     </p>
 
-    <!-- Coordonnées -->
     <div style="margin-bottom:30px; line-height:1.8em;">
-      <p>📧 <strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com" style="color:#d4af37; text-decoration:none;">infocharityhopeafrica@gmail.com</a></p>
-      <p>💼 <strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com" style="color:#d4af37; text-decoration:none;">infobusinesclassewomen@gmail.com</a></p>
-      <p>💖 <strong>Dons & Soutien :</strong> <a href="mailto:donatecharity&hopeafrica@gmail.com" style="color:#d4af37; text-decoration:none;">donatecharity&hopeafrica@gmail.com</a></p>
+      <p>📧 <strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com" style="color:#d4af37;">infocharityhopeafrica@gmail.com</a></p>
+      <p>💼 <strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com" style="color:#d4af37;">infobusinesclassewomen@gmail.com</a></p>
+      <p>💖 <strong>Dons & Soutien :</strong> <a href="mailto:donatecharity&hopeafrica@gmail.com" style="color:#d4af37;">donatecharity&hopeafrica@gmail.com</a></p>
       <p>📞 <strong>Téléphone :</strong> +237 652 075 162</p>
       <p>📍 <strong>Adresse :</strong> Yaoundé, Cameroun</p>
     </div>
 
     <!-- Formulaire de contact -->
-<form action="mailto:infocharityhopeafrica@gmail.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; text-align:left;">
-  <l<!-- Formulaire de contact intelligent -->
-<form id="contactForm" style="max-width:500px; margin:0 auto; text-align:left;">
-  <label>Nom complet :</label>
-  <input type="text" id="name" placeholder="Votre nom" required
-         style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
-
-  <label>Email :</label>
-  <input type="email" id="email" placeholder="Votre adresse email" required
-         style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
-
-  <label>Sujet :</label>
-  <select id="subject" style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
-    <option value="general">Informations générales</option>
-    <option value="business">Business Class Women</option>
-    <option value="don">Dons & Soutien</option>
-  </select>
-
-  <label>Message :</label>
-  <textarea id="message" placeholder="Votre message..." rows="4" required
-            style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
-
-  <button type="button"
-          onclick="sendEmail()"
-          style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
-    Envoyer le message
-  </button>
-</form>
-
-<script>
-  function sendEmail() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-
-    let to = "";
-
-    if (subject === "general") {
-      to = "infocharityhopeafrica@gmail.com";
-    } else if (subject === "business") {
-      to = "infobusinesclassewomen@gmail.com";
-    } else if (subject === "don") {
-      to = "donatecharity&hopeafrica@gmail.com";
-    }
-
-    const mailtoLink = `mailto:${to}?subject=Message de ${name}&body=De : ${name} (${email})%0D%0A%0D%0A${message}`;
-    window.location.href = mailtoLink;
-  }
-</script>
+    <form id="contactForm" style="max-width:500px; margin:0 auto; text-align:left;">
+      <label>Nom complet :</label>
+      <input type="text" id="name" placeholder="Votre nom" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
 
       <label>Email :</label>
-      <input type="email" placeholder="Votre adresse email" required
-             style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+      <input type="email" id="email" placeholder="Votre adresse email" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+
+      <label>Sujet :</label>
+      <select id="subject" style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+        <option value="general">Informations générales</option>
+        <option value="business">Business Class Women</option>
+        <option value="don">Dons & Soutien</option>
+      </select>
 
       <label>Message :</label>
-      <textarea placeholder="Votre message..." rows="4" required
-                style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
+      <textarea id="message" placeholder="Votre message..." rows="4" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
 
-      <button type="submit"
-              style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
+      <button type="button" onclick="sendEmail()" style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
         Envoyer le message
       </button>
     </form>
-  </section>
-    footer {
-      background-color: #002147;
-      color: #f8f8f4;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="logo-cha.png" alt="Logo Charity & Hope Africa Empowerment">
-    <h1>Charity & Hope Africa Empowerment</h1>
-    <p>Connecter, Inspirer, Transformer l’Afrique 🌍</p>
-  </header>
-
-  <section>
-    <h2>Bienvenue</h2>
-    <p>Ensemble, nous organisons des conférences, galas, festivals et initiatives pour l’autonomisation en Afrique.</p>
   </section>
 
   <footer>
     &copy; 2025 Charity & Hope Africa Empowerment — Tous droits réservés.
   </footer>
+
+  <script>
+    function sendEmail() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      let to = "";
+      if (subject === "general") to = "infocharityhopeafrica@gmail.com";
+      else if (subject === "business") to = "infobusinesclassewomen@gmail.com";
+      else if (subject === "don") to = "donatecharity&hopeafrica@gmail.com";
+
+      const mailtoLink = `mailto:${to}?subject=Message de ${name}&body=De : ${name} (${email})%0D%0A%0D%0A${message}`;
+      window.location.href = mailtoLink;
+    }
+  </script>
 </body>
 </html>
