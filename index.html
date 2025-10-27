@@ -163,10 +163,24 @@
     </div>
 
     <!-- Formulaire de contact -->
-    <form style="max-width:500px; margin:0 auto; text-align:left;">
-      <label>Nom complet :</label>
-      <input type="text" placeholder="Votre nom" required
-             style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+<form action="mailto:infocharityhopeafrica@gmail.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; text-align:left;">
+  <label>Nom complet :</label>
+  <input type="text" placeholder="Votre nom" required
+         style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+
+  <label>Email :</label>
+  <input type="email" placeholder="Votre adresse email" required
+         style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+
+  <label>Message :</label>
+  <textarea placeholder="Votre message..." rows="4" required
+            style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
+
+  <button type="submit"
+          style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
+    Envoyer le message
+  </button>
+</form>
 
       <label>Email :</label>
       <input type="email" placeholder="Votre adresse email" required
