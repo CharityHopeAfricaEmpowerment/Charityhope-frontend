@@ -1,61 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><!-- Section d'accueil -->
-<section id="accueil" style="position: relative; text-align: center; color: white; overflow: hidden;">
-  <!-- Image de fond -->
-  <img src="https://images.unsplash.com/photo-1593113598332-cd6f9f3a26db?auto=format&fit=crop&w=1500&q=80"
-       alt="Africa Empowerment" 
-       style="width: 100%; height: 90vh; object-fit: cover; filter: brightness(60%);">
-
-  <!-- Contenu centré -->
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-    <h1 style="font-size: 2.8em; margin-bottom: 15px; font-weight: bold;">
-      Ensemble, construisons un avenir meilleur pour l’Afrique 🌍
-    </h1>
-    <p style="font-size: 1.2em; margin-bottom: 25px;">
-      Des initiatives qui inspirent, connectent et transforment des vies.
-    </p>
-    <a href="#evenements" 
-       style="background-color: #c7a008; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">
-       Découvrir nos événements
-    </a>
-  </div>
-</section>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charity & Hope Africa Empowerment</title>
   <style>
-    body <header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background-color: #fefcf8; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-  <div style="display: flex; align-items: center;">
-    <img src="logo-cha.png" alt="Charity & Hope Africa Logo" style="width:80px; border-radius:50%; margin-right:15px;">
-    <div>
-      <h1 style="margin:0; font-size: 1.4em; color: #0b1a40;">Charity & Hope Africa Empowerment</h1>
-      <p style="margin:0; color:#c7a008; font-style:italic;">Connecter, Inspirer, Transformer l’Afrique</p>
-    </div>
-  </div>
-
-  <nav>
-    <a href="#accueil" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Accueil</a>
-    <a href="#evenements" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Événements</a>
-    <a href="#apropos" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">À propos</a>
-    <a href="#contact" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Contact</a>
-  </nav>
-</header><header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background-color: #fefcf8; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-  <div style="display: flex; align-items: center;">
-    <img src="logo-cha.png" alt="Charity & Hope Africa Logo" style="width:80px; border-radius:50%; margin-right:15px;">
-    <div>
-      <h1 style="margin:0; font-size: 1.4em; color: #0b1a40;">Charity & Hope Africa Empowerment</h1>
-      <p style="margin:0; color:#c7a008; font-style:italic;">Connecter, Inspirer, Transformer l’Afrique</p>
-    </div>
-  </div>
-
-  <nav>
-    <a href="#accueil" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Accueil</a>
-    <a href="#evenements" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Événements</a>
-    <a href="#apropos" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">À propos</a>
-    <a href="#contact" style="margin: 0 10px; color: #0b1a40; text-decoration:none; font-weight:bold;">Contact</a>
-  </nav>
-</header>{
+    body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background-color: #f8f8f4; /* blanc cassé */
@@ -66,6 +16,11 @@
       color: #d4af37; /* or */
       padding: 20px;
       text-align: center;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
     }
     header h1 {
       margin: 0;
@@ -79,6 +34,11 @@
     section {
       padding: 30px 20px;
       text-align: center;
+      background-image: url('logo-cha.png'); /* ton logo comme fond */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 400px;
     }
     h2 {
       color: #d4af37;
@@ -104,16 +64,13 @@
 </head>
 <body>
   <header>
+    <img src="logo-cha.png" alt="Logo Charity & Hope Africa Empowerment">
     <h1>Charity & Hope Africa Empowerment</h1>
     <p>Connecter, Inspirer, Transformer l’Afrique 🌍</p>
   </header>
 
   <section>
-    <h2>Bienvenue</h2>
-    <p>
-      Ensemble, nous organisons des conférences, galas, festivals et initiatives pour l’autonomisation en Afrique.
-    </p>
-    <a href="events.html" class="btn">Découvrir nos événements</a>
+    <!-- ton logo sert déjà d’image de fond -->
   </section>
 
   <footer>
