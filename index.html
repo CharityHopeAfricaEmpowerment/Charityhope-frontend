@@ -1,104 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charity & Hope Africa Empowerment</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Charity & Hope Africa Empowerment — Accueil</title>
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: #f8f8f4; /* blanc cassé */
-      color: #002147; /* bleu marine */
+    :root{
+      --navy:#002147;
+      --gold:#d4af37;
+      --cream:#f8f8f4;
+      --muted:#6b7280;
+      --maxwidth:1100px;
     }
-
-    header {
-      background-color: #002147;
-      color: #d4af37; /* or */
-      padding: 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
-
-    header p {
-      font-style: italic;
-      font-size: 1.1em;
-      color: #f8f8f4;
-    }
-
-    /* --- Section accueil simple sans logo en fond --- */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      min-height: 400px;
-    }
-
-    h2 {
-      color: #d4af37;
-      margin-bottom: 15px;
-    }
-
-    .btn {
-      background-color: #d4af37;
-      color: #002147;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1em;
-      border-radius: 25px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    footer {
-      background-color: #002147;
-      color: #f8f8f4;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--cream); color:var(--navy); -webkit-font-smoothing:antialiased;}
+    .container{max-width:var(--maxwidth);margin:0 auto;padding:20px;}
+    header.site-header{background:linear-gradient(90deg,var(--navy),#004067);color:var(--cream);}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;max-width:var(--maxwidth);margin:0 auto;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand img{width:78px;height:78px;object-fit:cover;border-radius:10px;border:3px solid var(--gold);background:#fff}
+    .brand h1{font-size:1.15rem;margin:0}
+    nav.main-nav{display:flex;gap:12px;align-items:center}
+    nav.main-nav a{color:var(--cream);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+    nav.main-nav a:hover{background:rgba(255,255,255,0.06)}
+    /* hero */
+    .hero{background:#fff;border-radius:12px;margin:20px auto;padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 6px 22px rgba(2,13,23,0.06)}
+    .hero h2{color:var(--navy);margin:6px 0;font-size:1.6rem}
+    .hero p{color:var(--muted);max-width:820px;margin:8px 0 18px}
+    .btn{background:var(--gold);color:var(--navy);padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn.secondary{background:transparent;color:var(--navy);border:2px solid var(--gold)}
+    /* cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,13,23,0.04);text-align:center}
+    .card h3{margin:10px 0;color:var(--navy)}
+    .card p{color:var(--muted);font-size:0.95rem}
+    /* responsive */
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.grid{grid-template-columns:1fr}.topbar{flex-direction:column;align-items:flex-start}.brand h1{font-size:1rem}}
+    footer.site-footer{background:var(--navy);color:var(--cream);padding:18px 0;margin-top:26px}
+    footer .container{display:flex;flex-direction:column;gap:8px;align-items:center}
+    .contact{font-size:0.95rem;color:var(--cream)}
+    .small{font-size:0.85rem;color:rgba(255,255,255,0.8)}
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo-cha.png" alt="Logo Charity & Hope Africa Empowerment">
-    <h1>Charity & Hope Africa Empowerment</h1>
-    <p>Connecter, Inspirer, Transformer l’Afrique 🌍</p>
+
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <img src="logo-chat.png" alt="Logo Charity & Hope">
+        <div>
+          <h1>Charity & Hope Africa Empowerment</h1>
+          <div class="small">Connecter • Inspirer • Transformer l’Afrique</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="evenements.html">Événements</a>
+        <a href="membres.html">Devenir membre</a>
+        <a href="partenariat.html">Devenir partenaire</a>
+        <a href="#contact" class="btn secondary" style="padding:8px 14px">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Bienvenue</h2>
-    <p>Ensemble, nous organisons des conférences, galas, festivals et initiatives pour l’autonomisation en Afrique.</p>
-  </section>
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Bienvenue — Charity & Hope Africa Empowerment</h2>
+      <p>
+        Nous promouvons la solidarité, l’entrepreneuriat, la croissance et la dignité humaine
+        par des actions sociales, sanitaires, éducatives et entrepreneuriales à travers l'Afrique.
+      </p>
+      <div>
+        <a href="evenements.html" class="btn">Découvrir nos événements</a>
+        <a href="membres.html" class="btn secondary" style="margin-left:12px">Devenir membre</a>
+      </div>
+    </section>
 
-  <!-- Section Contact -->
-  <section id="contact" style="padding:60px 20px; background-color:#002147; color:#f8f8f4; text-align:center;">
-    <h2 style="color:#d4af37; margin-bottom:30px;">Contactez-nous</h2>
-    <p style="max-width:650px; margin:0 auto 30px;">
-      Vous souhaitez collaborer, soutenir nos actions, participer à nos programmes, ou obtenir plus d’informations ?  
-      Écrivez-nous dès aujourd’hui — nous serons heureux de vous répondre 🌍
-    </p>
+    <section style="margin-top:22px" aria-labelledby="about-title">
+      <h2 id="about-title">Qui sommes-nous</h2>
+      <p style="color:var(--muted);max-width:900px;">
+        <strong>Type :</strong> ONG (Association à but non lucratif) • <strong>Pays :</strong> Cameroun • <strong>Année :</strong> 2024.
+        Nous agissons pour l’autonomisation des communautés — santé, éducation, agriculture & pisciculture, inclusion sociale.
+      </p>
 
-    <div style="margin-bottom:30px; line-height:1.8em;">
-      <p>📧 <strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com" style="color:#d4af37; text-decoration:none;">infocharityhopeafrica@gmail.com</a></p>
-      <p>💼 <strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com" style="color:#d4af37; text-decoration:none;">infobusinesclassewomen@gmail.com</a></p>
-      <p>💖 <strong>Dons & Soutien :</strong> <a href="mailto:donatecharity&hopeafrica@gmail.com" style="color:#d4af37; text-decoration:none;">donatecharity&hopeafrica@gmail.com</a></p>
-      <p>📞 <strong>Téléphone :</strong> +237 652 075 162</p>
-      <p>📍 <strong>Adresse :</strong> Yaoundé, Cameroun</p>
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" style="width:68px">
+          <h3>Éducation & Formation</h3>
+          <p>Programmes de formation et bourses pour les jeunes et les femmes.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2951/2951321.png" alt="" style="width:68px">
+          <h3>Autonomisation Économique</h3>
+          <p>Soutien entrepreneurial et accès au microcrédit pour projets locaux.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3063/3063828.png" alt="" style="width:68px">
+          <h3>Santé & Bien-être</h3>
+          <p>Campagnes sanitaires, ateliers maternité et distribution d'aide.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px" aria-labelledby="cta-title">
+      <h2 id="cta-title">Participez</h2>
+      <p style="color:var(--muted)">Rejoignez-nous, soutenez ou devenez partenaire pour maximiser l'impact.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="evenements.html" class="btn">Voir le calendrier complet</a>
+        <a href="partenariat.html" class="btn secondary">Devenir partenaire</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="contact">📧 infocharityhopeafrica@gmail.com • 📞 +237 652 075 162</div>
+      <div class="small">© 2025 Charity & Hope Africa Empowerment — Tous droits réservés.</div>
     </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Charity & Hope Africa Empowerment — Tous droits réservés.
   </footer>
+
 </body>
 </html>
