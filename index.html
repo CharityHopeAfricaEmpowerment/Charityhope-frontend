@@ -55,7 +55,43 @@
   .btn-ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:20px}
 </style>
 </head>
-<body>
+<!-- ============================
+     FORMULAIRE D’INSCRIPTION
+     ============================ -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("registerForm");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("https://charityhope-backend.onrender.com/api/register", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            alert("✅ Inscription réussie ! Votre code de billet : " + result.ticketCode);
+            form.reset();
+          } else {
+            alert("⚠️ Erreur : " + result.message);
+          }
+        } catch (error) {
+          console.error("❌ Erreur réseau :", error);
+          alert("❌ Une erreur s'est produite. Veuillez réessayer plus tard.");
+        }
+      });
+    } else {
+      console.warn("⚠️ Aucun formulaire avec l'ID #registerForm trouvé sur la page.");
+    }
+  });
+</script><body>
 <header>
   <div class="nav" role="navigation" aria-label="Main navigation">
     <div class="brand">
