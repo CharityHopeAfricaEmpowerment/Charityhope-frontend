@@ -1,217 +1,606 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Charity & Hope Africa Empowerment</title>
+  <meta name="description" content="Charity & Hope Africa Empowerment — événements, inscriptions, dons et actions pour l'autonomisation en Afrique." />
   <style>
-    :root {
-      --navy: #002147;
-      --gold: #d4af37;
-      --cream: #f8f8f4;
-      --maxwidth: 1100px;
+    :root{
+      --navy:#002147;
+      --gold:#d4af37;
+      --cream:#f8f8f4;
+      --muted:#6b7888;
+      --maxwidth:1100px;
+      --whatsapp:#25D366;
     }
-    * {box-sizing: border-box;}
-    body {
-      margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: var(--cream);
-      color: var(--navy);
-      overflow-x: hidden;
-    }
-    header {
-      background: var(--navy);
-      color: var(--cream);
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: 0; left: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1%, transparent 50%);
-      animation: stars 15s linear infinite;
-    }
-    @keyframes stars {
-      from { transform: translateY(0); }
-      to { transform: translateY(-50px); }
-    }
-    .nav {
-      max-width: var(--maxwidth);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      z-index: 2;
-    }
-    .nav img {
-      width: 65px;
-      border-radius: 8px;
-      border: 2px solid var(--gold);
-    }
-    .nav-links a {
-      color: var(--cream);
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .lang-switch {
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    main { max-width: var(--maxwidth); margin: 20px auto; padding: 10px; }
-    section { margin-bottom: 40px; }
-    h1, h2 { color: var(--navy); }
-    h1 { font-size: 2rem; }
-    p { line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    footer {
-      background: var(--navy);
-      color: var(--cream);
-      text-align: center;
-      padding: 15px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-    }
-    th { background: var(--navy); color: #fff; }
-    .testimonials {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.05);
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,'Poppins',Arial,sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased}
+    header{background:var(--navy);color:var(--cream);padding:12px 16px;position:relative;z-index:50}
+    .nav{max-width:var(--maxwidth);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:68px;height:68px;object-fit:cover;border-radius:10px;border:3px solid var(--gold);background:#fff}
+    h1.site-title{margin:0;font-size:1.05rem;line-height:1;color:var(--cream)}
+    p.site-slogan{margin:0;font-size:0.82rem;color:var(--gold);opacity:0.95}
+    .lang-select{background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--cream);padding:6px 10px;border-radius:6px}
+    main{max-width:var(--maxwidth);margin:26px auto;padding:0 16px 120px} /* leave space for bottom bar */
+    .hero{background:linear-gradient(90deg,var(--navy),#123058); color:var(--cream); padding:36px;border-radius:12px; text-align:left; display:flex; gap:20px; align-items:center; margin-top:8px}
+    .hero .left{flex:1}
+    .hero h2{margin:0 0 12px;font-size:2rem;color:var(--gold)}
+    .hero p{margin:0 0 18px;color:#e6eef8; max-width:720px}
+    .btn{background:var(--gold);color:var(--navy);padding:12px 20px;border-radius:28px;border:none;font-weight:700;cursor:pointer;display:inline-block;text-decoration:none}
+    .btn-ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:20px;text-decoration:none}
+    section{margin-top:26px}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(2,13,23,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    h2.section-title{color:var(--navy);margin:6px 0 12px}
+    .muted{color:var(--muted)}
+    .event-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+    th{background:var(--navy);color:var(--cream)}
+    .testimonial-wrap{display:flex;flex-direction:column;gap:12px}
+    .testimonial{background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(2,13,23,0.04)}
+    footer{background:var(--navy);color:var(--cream);padding:22px;margin-top:22px}
+    .small{font-size:0.9rem}
+    .field{display:block;margin-bottom:10px}
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+    input[type="file"]{padding:6px}
+    .tag{background:var(--gold);color:var(--navy);padding:6px 8px;border-radius:8px;font-weight:700}
+    .center{display:flex;justify-content:center;align-items:center}
+    .tiny{font-size:0.85rem;color:var(--muted)}
+    .mt8{margin-top:8px}
+    .mb8{margin-bottom:8px}
+    .actions-list{display:flex;flex-wrap:wrap;gap:12px}
+    .action-item{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04);flex:1;min-width:220px}
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+    /* bottom fixed menu */
+    .bottom-bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;z-index:999;backdrop-filter:blur(8px);background:rgba(0,33,71,0.85);box-shadow:0 -4px 20px rgba(0,0,0,0.15)}
+    .bottom-nav{max-width:var(--maxwidth);width:100%;display:flex;justify-content:space-around;align-items:center;padding:8px 12px;color:var(--cream)}
+    .nav-link{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--cream);text-decoration:none}
+    .nav-link svg{width:20px;height:20px;margin-bottom:4px;fill:var(--gold)}
+    .nav-link span{color:var(--cream)}
+    .whatsapp-btn{background:var(--whatsapp);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .share-btn{background:transparent;border:1px solid var(--whatsapp);color:var(--whatsapp);padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+    /* smooth scroll */
+    html{scroll-behavior:smooth}
   </style>
 </head>
-
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="nav">
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="logo-chat.png" alt="Logo Charity & Hope Africa" />
-        <strong>Charity & Hope Africa Empowerment</strong>
+    <div class="nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <img src="logo-chat.png" alt="Charity & Hope Africa Empowerment logo" id="site-logo">
+        <div>
+          <h1 class="site-title">Charity & Hope Africa Empowerment</h1>
+          <p class="site-slogan">Connecter, Inspirer, Transformer l’Afrique</p>
+        </div>
       </div>
-      <div class="nav-links">
-        <a href="#about">À propos</a>
-        <a href="#events">Événements</a>
-        <a href="#partners">Partenaires</a>
-        <a href="#donations">Faire un don</a>
-        <a href="#contact">Contact</a>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <select id="lang" class="lang-select" aria-label="Choisir la langue">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
       </div>
-      <select class="lang-switch" id="langSwitch">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-      </select>
     </div>
   </header>
 
   <main>
-    <!-- SECTION ACCUEIL -->
-    <section id="home" style="text-align:center;margin-top:30px;">
-      <h1>Bienvenue sur la plateforme Charity & Hope Africa Empowerment</h1>
-      <p>Une plateforme réunissant plus de <strong>2000 participants</strong> à chaque édition pour <strong>l’impact, l’innovation, la fraternité</strong> et le <strong>financement des projets</strong>.</p>
-      <a href="#events" class="btn">Découvrir nos événements</a>
-    </section>
-
-    <!-- À PROPOS -->
-    <section id="about">
-      <h2>À propos de nous</h2>
-      <p>Charity & Hope Africa Empowerment est une organisation non-gouvernementale (ONG) à but non lucratif basée à Yaoundé, Cameroun. Fondée en 2024, elle œuvre pour le développement humain, la solidarité, la dignité et l’autonomisation économique à travers des actions sociales, éducatives, sanitaires et entrepreneuriales.</p>
-      <h3>Vision</h3>
-      <p>Un avenir où chaque femme et chaque enfant en Afrique bénéficie d’un accès équitable à la santé, à l’éducation et à des opportunités économiques durables.</p>
-      <h3>Mission</h3>
-      <p>Accompagner les communautés vulnérables, notamment les femmes et les jeunes, à travers des programmes d’entrepreneuriat, d’éducation, de santé et de développement agricole.</p>
-      <h3>Nos objectifs</h3>
-      <ul>
-        <li>Favoriser l’autonomie économique et sociale des femmes et des jeunes.</li>
-        <li>Encourager la solidarité et la dignité humaine.</li>
-        <li>Créer un réseau panafricain d’impact durable.</li>
-      </ul>
-    </section>
-
-    <!-- ÉVÉNEMENTS -->
-    <section id="events">
-      <h2>Nos Événements 2025</h2>
-      <p>Découvrez nos événements majeurs et inscrivez-vous en ligne.</p>
-      <ul>
-        <li><a href="events/business-class.html">Business Class Women Competition (9–25 Décembre)</a></li>
-        <li><a href="events/pique-nique.html">Pique-Nique de l’Amour Fraternel (10 Février)</a></li>
-        <li><a href="events/etoiles-filantes.html">Étoiles Filantes de l’Afrique (Juillet)</a></li>
-        <li><a href="events/challenge-vacances.html">Challenge Vacances & Fournitures (Août)</a></li>
-        <li><a href="events/back-to-school.html">Opération Back to School (Septembre)</a></li>
-        <li><a href="events/gala.html">Soirée de Gala & Awards de l’Impact (25 Décembre)</a></li>
-      </ul>
-    </section>
-
-    <!-- TÉMOIGNAGES -->
-    <section id="testimonials">
-      <h2>Témoignages</h2>
-      <div class="testimonials">
-        <p><strong>Marie T.</strong> – “Grâce à la Business Class Women, j’ai lancé ma marque locale financée à 400 000 XAF !”</p>
-        <p><strong>Jacques N.</strong> – “Les séminaires m’ont inspiré à créer une coopérative agricole.”</p>
-        <p><strong>Rita A.</strong> – “Une expérience incroyable ! Beaucoup de soutien et de solidarité.”</p>
+    <!-- HERO -->
+    <section id="accueil" class="hero" aria-labelledby="hero-title">
+      <div class="left">
+        <h2 id="hero-title">Bienvenue sur la plateforme Charity & Hope Africa Empowerment</h2>
+        <p>Une plateforme réunissant plus de <strong>2000 participants</strong> à chaque édition pour <strong>l’impact, l’innovation, la fraternité</strong> et le <strong>financement des projets</strong>.</p>
+        <div style="margin-top:18px">
+          <a class="btn" href="#events">Découvrir nos événements</a>
+          <a class="btn-ghost" href="#don" style="margin-left:12px">Faire un don</a>
+        </div>
       </div>
     </section>
 
-    <!-- PARTENAIRES -->
-    <section id="partners">
-      <h2>Devenir partenaire</h2>
-      <p>Rejoignez-nous pour soutenir nos actions à fort impact. Les partenariats débutent à 5 000 000 FCFA.</p>
-      <a href="#contact" class="btn">Nous contacter</a>
+    <!-- A PROPOS -->
+    <section id="apropos">
+      <h2 class="section-title">À propos de nous</h2>
+      <div class="card">
+        <p><strong>Charity & Hope Africa (CHA)</strong> est une <strong>association à but non lucratif</strong> (ONG) enregistrée au Cameroun, créée en 2024. Nous promouvons la solidarité, l'entrepreneuriat, la croissance, le développement et la dignité humaine à travers des actions sociales, humanitaires, sanitaires, éducatives et entrepreneuriales.</p>
+
+        <h3>Vision</h3>
+        <p>Un avenir où chaque femme et chaque enfant en Afrique jouit d'un accès équitable à des soins de santé de qualité, à l'éducation, à des opportunités économiques durables et à une protection sociale digne.</p>
+
+        <h3>Mission</h3>
+        <p>Accompagner les communautés vulnérables, en particulier les femmes et les jeunes, par des programmes d'éducation, de santé, de développement agricole et piscicole, et par l'organisation d'événements et compétitions permettant le financement de projets.</p>
+
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Favoriser l'autonomisation économique des femmes et des jeunes.</li>
+          <li>Renforcer la santé et l'éducation communautaire.</li>
+          <li>Faciliter l'accès au financement pour des projets locaux.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- DONS -->
-    <section id="donations">
-      <h2>Faire un don</h2>
-      <p>Votre soutien nous aide à transformer des vies.</p>
-      <ul>
-        <li>Orange Money : <strong>+237 691 238 359</strong></li>
-        <li>MTN Mobile Money : <strong>+237 652 075 162</strong></li>
-        <li>Email dons : <strong>donatecharityhopeafrica@gmail.com</strong></li>
-        <li>Compte bancaire : <strong>4187 6228 8308 5704</strong></li>
-      </ul>
+    <!-- ACTIONS -->
+    <section id="actions">
+      <h2 class="section-title">Nos actions</h2>
+      <div class="card actions-list">
+        <div class="action-item">
+          <h3>Santé publique & bien-être</h3>
+          <ul>
+            <li>Campagnes de dépistage (VIH, hypertension, diabète)</li>
+            <li><strong>Consultations gratuites des yeux</strong>, distribution de lunettes</li>
+            <li>Sensibilisation santé maternelle et nutrition</li>
+            <li>Distribution de kits d'hygiène</li>
+          </ul>
+        </div>
+        <div class="action-item">
+          <h3>Développement agricole & pisciculture</h3>
+          <ul>
+            <li>Formations pratiques en agriculture et pisciculture</li>
+            <li>Distribution de semences et alevins</li>
+            <li>Accompagnement à la commercialisation</li>
+          </ul>
+        </div>
+        <div class="action-item">
+          <h3>Autonomisation économique</h3>
+          <ul>
+            <li>Ateliers d'entrepreneuriat et leadership</li>
+            <li>Accès à microcrédits solidaires</li>
+            <li>Accompagnement des projets via BCWC</li>
+          </ul>
+        </div>
+        <div class="action-item">
+          <h3>Éducation & jeunesse</h3>
+          <ul>
+            <li>Bourses et distribution de fournitures</li>
+            <li><strong>Challenge Vacances :</strong> kits scolaires, bourses et vivres pour les enfants méritants</li>
+            <li>Programmes de mentorat et insertion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <h2 class="section-title">Nos événements 2025</h2>
+      <div class="card">
+        <p class="tiny">Cliquez sur "Partager" pour envoyer le lien de diffusion WhatsApp de l'événement (partage uniquement).</p>
+
+        <table aria-label="calendrier events">
+          <thead>
+            <tr><th>Événement</th><th>Dates</th><th>Clôture</th><th>Frais</th><th>Info</th><th>Partager</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Business Class Women Competition (BCWC)</strong></td>
+              <td>9 – 25 Décembre 2025</td>
+              <td>15 Décembre 2025</td>
+              <td>40 000 XAF (sans logement) / 60 000 XAF (avec logement + billet gala)</td>
+              <td>Compétition pour femmes 18–35 ans. Plans d'affaires max 20 pages. Meilleurs projets financés.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Découvrez%20le%20Business%20Class%20Women%20Competition%20de%20Charity%20%26%20Hope%20Africa%20Empowerment%20(9-25%20Déc).%20Plus%20d'infos%20:%20https://charityhope-frontend.onrender.com#BCWC" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Étoiles Filantes de l'Afrique</strong></td>
+              <td>15 – 20 Juillet 2025</td>
+              <td>30 Juin 2025</td>
+              <td>30 000 XAF (sans logement) / 50 000 XAF (avec logement)</td>
+              <td>Détection de talents (arts, science, tech). Les meilleurs projets reçoivent financement.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Découvrez%20Étoiles%20Filantes%20de%20l'Afrique%20-%20Charity%20%26%20Hope%20Africa.%20Plus%20:%20https://charityhope-frontend.onrender.com#ETOILE" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Challenge Vacances & Fournitures</strong></td>
+              <td>1 – 7 Août 2025</td>
+              <td>30 Juin 2025</td>
+              <td>10 000 XAF (participation) + 10 000 XAF (nutrition)</td>
+              <td>Activités éducatives et sportives. Récompenses : kits scolaires, bourses, vivres.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Challenge%20Vacances%20-%20Charity%20%26%20Hope%20Africa.%20Infos%20:%20https://charityhope-frontend.onrender.com#CHALLENGE" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Pique-Nique de l'Amour Fraternel</strong></td>
+              <td>10 Février 2025</td>
+              <td>10 Février 2025</td>
+              <td>5 000 XAF</td>
+              <td>Journée conviviale de solidarité et cohésion.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Pique-Nique%20de%20l'Amour%20Fraternel%20-%20Charity%20%26%20Hope%20Africa.%20Infos%20:%20https://charityhope-frontend.onrender.com#PIQUE" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Opération Back to School</strong></td>
+              <td>1 – 7 Septembre 2025</td>
+              <td>31 Août 2025</td>
+              <td>Gratuit pour les bénéficiaires</td>
+              <td>Soutien scolaire, bourses, fournitures pour orphelins et nécessiteux.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Opération%20Back%20to%20School%20-%20Charity%20%26%20Hope%20Africa.%20Infos%20:%20https://charityhope-frontend.onrender.com#BACKSCHOOL" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Soirée de Gala & Awards de l'Impact</strong></td>
+              <td>25 Décembre 2025</td>
+              <td>15 Décembre 2025</td>
+              <td>5 000 – 200 000 XAF selon catégorie</td>
+              <td>Dîner, remises de prix, levée de fonds. Avantages par billet: accès, repas, photo, visibilité.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Soirée%20de%20Gala%20&%20Awards%20de%20l'Impact%20-%20Charity%20%26%20Hope%20Africa.%20Infos%20:%20https://charityhope-frontend.onrender.com#GALA" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+
+            <tr>
+              <td><strong>Réservation Stands</strong></td>
+              <td>Pendant les événements (dates var.)</td>
+              <td>15 Décembre (réservation finale)</td>
+              <td>1 m² = 250 000 XAF • 2 m² = 450 000 XAF • 3 m² = 700 000 XAF • ≥4 m² : à négocier</td>
+              <td>Stand 3m x 3m standard inclut table + 2 chaises; réservation préalable requise.</td>
+              <td><a class="share-btn" href="https://wa.me/?text=Réservation%20Stand%20-%20Charity%20%26%20Hope%20Africa.%20Infos%20:%20https://charityhope-frontend.onrender.com#STAND" target="_blank" rel="noopener">WhatsApp</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie">
+      <h2 class="section-title">Galerie</h2>
+      <div class="card">
+        <div class="gallery">
+          <img src="gal1.jpg" alt="galerie1">
+          <img src="gal2.jpg" alt="galerie2">
+          <img src="gal3.jpg" alt="galerie3">
+          <img src="gal4.jpg" alt="galerie4">
+          <img src="gal5.jpg" alt="galerie5">
+          <img src="gal6.jpg" alt="galerie6">
+        </div>
+        <div class="center" style="margin-top:12px"><a class="btn" href="#">Voir plus</a></div>
+      </div>
+    </section>
+
+    <!-- INSCRIPTIONS / FORMULAIRE -->
+    <section id="formulaire">
+      <h2 class="section-title">Inscription / Dépôt de dossier</h2>
+      <div class="card">
+        <p class="tiny">Formulaire d'inscription centralisé — après soumission tu recevras un code unique et (si configuré) un email de confirmation contenant ton billet/QR code.</p>
+
+        <form id="registerForm" enctype="multipart/form-data">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label class="field">Nom complet *</label>
+              <input type="text" name="fullName" required placeholder="Nom complet">
+            </div>
+            <div>
+              <label class="field">Email *</label>
+              <input type="email" name="email" required placeholder="email@example.com">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+            <div>
+              <label class="field">Téléphone</label>
+              <input type="tel" name="phone" placeholder="+237 ...">
+            </div>
+            <div>
+              <label class="field">Ville</label>
+              <input type="text" name="city" placeholder="Yaoundé">
+            </div>
+          </div>
+
+          <label class="field" style="margin-top:8px">Choisissez l'événement *</label>
+          <select name="eventType" required>
+            <option value="BCWC">Business Class Women Competition</option>
+            <option value="GALA">Soirée de Gala</option>
+            <option value="ETOILE">Étoiles Filantes</option>
+            <option value="CHALLENGE">Challenge Vacances</option>
+            <option value="BACKSCHOOL">Opération Back to School</option>
+            <option value="PIQUE">Pique-Nique</option>
+            <option value="STAND">Réservation Stand</option>
+          </select>
+
+          <label class="field">Catégorie / Type (ex: GALA-VIP, PARTICIPANTE, STAND-2M)</label>
+          <input type="text" name="category" placeholder="ex: GALA-VIP">
+
+          <label class="field">Message / Détails du projet</label>
+          <textarea name="message" rows="4" placeholder="Décrivez votre projet, stand ou besoin"></textarea>
+
+          <label class="field">Joindre fichiers (PDF, JPG, PNG) — max total 30MB</label>
+          <input type="file" name="files" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+          <label class="field">Mode de réception du billet</label>
+          <select name="deliveryMethod">
+            <option value="email">Par email (recommandé)</option>
+            <option value="ticket">Retrait sur place</option>
+            <option value="ship">Envoi physique (frais client)</option>
+          </select>
+
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+            <button id="submitBtn" class="btn" type="button">Soumettre</button>
+            <div id="formResult" class="tiny"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- BILLETS & STANDS -->
+    <section id="tickets" class="mt8">
+      <h2 class="section-title">Billets & Réservations</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Acheter un billet — Soirée de Gala</h3>
+          <label class="field">Catégorie</label>
+          <select id="ticketCategory">
+            <option value="GALA-VIP">Excellence (VIP) — 200 000 XAF</option>
+            <option value="GALA-PRESTIGE">Prestige — 100 000 XAF</option>
+            <option value="GALA-GOLD">Or — 50 000 XAF</option>
+            <option value="GALA-SILVER">Argent — 25 000 XAF</option>
+            <option value="GALA-STANDARD">Standard — 10 000 XAF</option>
+            <option value="GALA-YOUTH">Jeune — 5 000 XAF</option>
+          </select>
+
+          <label class="field">Nom complet</label>
+          <input id="ticketName" type="text" placeholder="Nom complet">
+
+          <div style="margin-top:10px">
+            <button class="btn" id="buyTicketBtn">Réserver (générer code)</button>
+          </div>
+          <div id="ticketResult" class="tiny mt8"></div>
+        </div>
+
+        <div class="card">
+          <h3>Réserver un stand</h3>
+          <label class="field">Surface souhaitée</label>
+          <select id="standSize">
+            <option value="1m">1 m² — 250 000 XAF</option>
+            <option value="2m">2 m² — 450 000 XAF</option>
+            <option value="3m">3 m² — 700 000 XAF</option>
+            <option value="4m">4 m² et plus — À négocier</option>
+          </select>
+
+          <label class="field">Nom de l'exposant</label>
+          <input id="standName" type="text" placeholder="Nom de l'exposant">
+
+          <div style="margin-top:10px"><button class="btn" id="reserveStandBtn">Réserver stand</button></div>
+          <div id="standResult" class="tiny mt8"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATIONS -->
+    <section id="don" class="mt8">
+      <h2 class="section-title">Faire un don</h2>
+      <div class="card" style="max-width:900px;margin:auto">
+        <p>Votre soutien permet des formations, des soins, des bourses et le financement de projets.</p>
+        <div style="text-align:left;max-width:600px;margin:auto">
+          <p>📱 <strong>Orange Money :</strong> +237 691 238 359</p>
+          <p>📱 <strong>MTN Mobile Money :</strong> +237 652 075 162</p>
+          <p>🏦 <strong>Compte bancaire :</strong> 4187 6228 8308 5704</p>
+          <p>📧 <strong>Email dons :</strong> donatecharityhopeafrica@gmail.com</p>
+
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <a class="btn" href="mailto:donatecharityhopeafrica@gmail.com">Envoyer les détails du don</a>
+            <a class="whatsapp-btn" href="https://wa.me/237652075162" target="_blank" rel="noopener">Contact WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="mt8">
+      <h2 class="section-title">Témoignages</h2>
+      <div class="card testimonial-wrap">
+        <div class="testimonial"><strong>Amina Tchouamo — Douala</strong><p>Participer au BCWC m’a permis de structurer mon idée et d’obtenir un accompagnement pour lancer ma marque de cosmétiques naturels.</p></div>
+        <div class="testimonial"><strong>Clarisse Noubissi — Yaoundé</strong><p>Cette expérience m’a donné confiance. J’ai aujourd’hui un centre de transformation agroalimentaire.</p></div>
+        <div class="testimonial"><strong>Evelyne Kemayou — Bafoussam</strong><p>Les formations m’ont aidée à mieux gérer mon activité et à organiser mes finances.</p></div>
+        <div class="testimonial"><strong>Dr. Jean-Paul Mengue — Yaoundé</strong><p>Le Gala permet des rencontres de qualité et des partenariats qui durent.</p></div>
+        <div class="testimonial"><strong>Sophie Ndong — Libreville</strong><p>Voyager pour assister au Gala valait la peine : échanges riches et organisation impeccable.</p></div>
+        <div class="testimonial"><strong>Maman Elise Nkoa — Yaoundé</strong><p>Le pique-nique a renforcé la solidarité de notre communauté.</p></div>
+        <div class="testimonial"><strong>Prince Talla — Bamenda</strong><p>Première participation — j’ai appris la valeur du vivre-ensemble.</p></div>
+        <div class="testimonial"><strong>Ruth Aboubakar — Garoua</strong><p>Grâce à Étoiles Filantes, j’ai pu monter sur une grande scène et rencontrer un producteur.</p></div>
+        <div class="testimonial"><strong>Kevin Nsom — Yaoundé</strong><p>Le concours m’a aidé à financer l’enregistrement de mon premier single.</p></div>
+        <div class="testimonial"><strong>Grace Mbianda — Douala</strong><p>Orpheline, j’ai reçu des fournitures scolaires; j’ai repris confiance pour mes études.</p></div>
+        <div class="testimonial"><strong>Samuel Etoundi — Bafia</strong><p>Les ateliers m’ont donné des compétences et une bourse pour la rentrée.</p></div>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contactez-nous</h2>
-      <p>📍 Yaoundé — Cameroun</p>
-      <p>📧 infocharityhopeafrica@gmail.com</p>
-      <p>📞 +237 652 075 162</p>
+    <section id="contact" class="mt8">
+      <h2 class="section-title">Contact</h2>
+      <div class="card" style="max-width:900px;margin:auto">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div>
+            <p><strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com">infocharityhopeafrica@gmail.com</a></p>
+            <p><strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com">infobusinesclassewomen@gmail.com</a></p>
+            <p><strong>Dons & Sponsors :</strong> <a href="mailto:donatecharityhopeafrica@gmail.com">donatecharityhopeafrica@gmail.com</a></p>
+            <p><strong>Téléphone :</strong> +237 652 075 162</p>
+            <p><strong>Lieu des événements :</strong> Yaoundé, Cameroun</p>
+          </div>
+          <div>
+            <form id="contactForm">
+              <label class="field">Nom</label><input type="text" id="cname" required>
+              <label class="field">Email</label><input type="email" id="cemail" required>
+              <label class="field">Message</label><textarea id="cmessage" rows="4" required></textarea>
+              <div style="margin-top:10px"><button class="btn" id="contactSend">Envoyer</button></div>
+              <div id="contactResult" class="tiny mt8"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section id="legal" class="mt8">
+      <h2 class="section-title">Politique de confidentialité & Conditions d'utilisation</h2>
+      <div class="card">
+        <h3>Politique de confidentialité</h3>
+        <p>Charity & Hope Africa Empowerment collecte uniquement les données nécessaires pour gérer les inscriptions, les dons et les communications. Les données (nom, email, téléphone, fichiers) sont utilisées pour la gestion interne et la communication avec les participants/donateurs. Pour toute question, contactez: infocharityhopeafrica@gmail.com.</p>
+
+        <h3>Conditions d'utilisation</h3>
+        <p>En utilisant ce site vous acceptez de fournir des informations exactes et vous acceptez les conditions d'inscription. Les dons sont en général non remboursables sauf en cas d'annulation officielle de l'événement.</p>
+        <p class="tiny">Dernière mise à jour : Octobre 2025</p>
+      </div>
     </section>
   </main>
 
+  <!-- BOTTOM FIXED NAV -->
+  <div class="bottom-bar" role="navigation" aria-label="Navigation bottom">
+    <nav class="bottom-nav">
+      <a class="nav-link" href="#accueil" title="Accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v8h-12v-8h-3z"></path></svg><span>Accueil</span></a>
+      <a class="nav-link" href="#apropos" title="À propos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span>À propos</span></a>
+      <a class="nav-link" href="#events" title="Événements"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h10v2H7zM5 6h14v2H5zM5 14h6v2H5z"/></svg><span>Événements</span></a>
+      <a class="nav-link" href="#actions" title="Actions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 7h-8l4-7zm0 20v-9l-4 3h8l-4-3v9z"/></svg><span>Actions</span></a>
+      <a class="nav-link" href="#don" title="Dons"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-4.35-9-7.06C-1 9.4 4.5 4 12 8c7.5-4 13 1.4 9 5.94C18 16.65 12 21 12 21z"/></svg><span>Dons</span></a>
+      <a class="nav-link" href="#contact" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8V7l-3 2-2-1-4 3-6-4v10h16V8z"/></svg><span>Contact</span></a>
+    </nav>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Charity & Hope Africa Empowerment — Tous droits réservés.</p>
+    <div style="max-width:var(--maxwidth);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <p style="margin:0"><strong>Charity & Hope Africa Empowerment</strong></p>
+        <p style="margin:0;font-size:0.9rem">© 2025 Charity & Hope Africa Empowerment — Tous droits réservés.</p>
+      </div>
+
+      <div style="text-align:right">
+        <p style="margin:0">📧 infocharityhopeafrica@gmail.com</p>
+        <p style="margin:0">📞 +237 652 075 162</p>
+      </div>
+    </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
-    const switcher = document.getElementById("langSwitch");
-    switcher.addEventListener("change", () => {
-      alert("🌍 La version multilingue sera activée prochainement !");
+    // Lang selector placeholder
+    document.getElementById('lang').addEventListener('change', (e) => {
+      alert('La fonctionnalité multilingue sera activée prochainement. Langue choisie : ' + e.target.value);
+    });
+
+    // Form submission (frontend) -> posts to backend if available
+    document.getElementById('submitBtn').addEventListener('click', async () => {
+      const form = document.getElementById('registerForm');
+      const formData = new FormData(form);
+
+      // try posting to backend endpoint, otherwise fallback to mailto + download summary
+      try {
+        const resp = await fetch('https://charityhope-backend.onrender.com/api/register', {
+          method: 'POST',
+          body: formData
+        });
+        const j = await resp.json();
+        if (resp.ok) {
+          document.getElementById('formResult').innerHTML = 'Soumission reçue. Code : <strong>' + (j.ticketCode || j.code || '') + '</strong>';
+          form.reset();
+          return;
+        } else {
+          throw new Error(j.message || 'Erreur serveur');
+        }
+      } catch (err) {
+        // fallback: create summary file and open mailto
+        const data = {};
+        formData.forEach((v,k) => { data[k]= (v instanceof File) ? v.name : v; });
+        const code = (data.eventType || 'SUB') + '-' + Math.floor(100 + Math.random()*900) + '-' + new Date().getFullYear().toString().slice(-2);
+        const lines = [
+          'Charity & Hope Africa Empowerment — Soumission',
+          'Code: ' + code,
+          'Date: ' + new Date().toLocaleString(),
+          'Nom: ' + (data.fullName || ''),
+          'Email: ' + (data.email || ''),
+          'Téléphone: ' + (data.phone || ''),
+          'Ville: ' + (data.city || ''),
+          'Événement: ' + (data.eventType || ''),
+          'Catégorie: ' + (data.category || ''),
+          'Mode réception: ' + (data.deliveryMethod || ''),
+          'Fichiers: ' + (data.files || 'Aucun'),
+          'Message: ' + (data.message || '')
+        ].join('\n');
+
+        // download summary
+        const blob = new Blob([lines], { type:'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = code + '_summary.txt'; a.click(); URL.revokeObjectURL(url);
+
+        // open mailto
+        let to = 'infocharityhopeafrica@gmail.com';
+        if (data.eventType && data.eventType.includes('BCWC')) to = 'infobusinesclassewomen@gmail.com';
+        const subject = encodeURIComponent('[Soumission] ' + code + ' - ' + (data.eventType || ''));
+        const body = encodeURIComponent(lines + '\n\n(Envoyez les fichiers séparément si nécessaire.)');
+        window.open('mailto:' + to + '?subject=' + subject + '&body=' + body, '_blank');
+
+        document.getElementById('formResult').innerHTML = 'Soumission locale créée. Code : <strong>' + code + '</strong>. Un mail a été ouvert.';
+      }
+    });
+
+    // Ticket generation (frontend)
+    document.getElementById('buyTicketBtn').addEventListener('click', () => {
+      const cat = document.getElementById('ticketCategory').value;
+      const name = (document.getElementById('ticketName').value || 'Invité').trim();
+      const code = 'GALA-' + cat.split(' ')[0] + '-' + Math.floor(100 + Math.random()*900) + '-' + new Date().getFullYear().toString().slice(-2);
+      const lines = [
+        'Billet — Soirée de Gala',
+        'Code: ' + code,
+        'Nom: ' + name,
+        'Catégorie: ' + cat,
+        'Date: 25 décembre 2025',
+        'Lieu: Yaoundé'
+      ].join('\n');
+      const blob = new Blob([lines], { type:'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = code + '_ticket.txt'; a.click(); URL.revokeObjectURL(url);
+
+      // prepare mailto
+      const subject = encodeURIComponent('Achat billet ' + code);
+      const body = encodeURIComponent(lines);
+      window.open('mailto:infocharityhopeafrica@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+
+      document.getElementById('ticketResult').innerHTML = 'Billet généré — code : <strong>' + code + '</strong>. Un mail a été préparé vers infocharityhopeafrica@gmail.com.';
+    });
+
+    // Stand reservation
+    document.getElementById('reserveStandBtn').addEventListener('click', () => {
+      const size = document.getElementById('standSize').value;
+      const name = (document.getElementById('standName').value || 'Exposant').trim();
+      const code = 'STAND-' + size + '-' + Math.floor(100 + Math.random()*900) + '-' + new Date().getFullYear().toString().slice(-2);
+      const price = size === '1m' ? '250000' : size === '2m' ? '450000' : size === '3m' ? '700000' : 'À négocier';
+      const lines = [
+        'Réservation Stand',
+        'Code: ' + code,
+        'Nom exposant: ' + name,
+        'Surface: ' + size,
+        'Montant estimé (XAF): ' + price
+      ].join('\n');
+      const blob = new Blob([lines], { type:'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = code + '_stand.txt'; a.click(); URL.revokeObjectURL(url);
+
+      const subject = encodeURIComponent('Réservation stand ' + code);
+      const body = encodeURIComponent(lines);
+      window.open('mailto:infocharityhopeafrica@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+
+      document.getElementById('standResult').innerHTML = 'Réservation locale créée — code : <strong>' + code + '</strong>. Envoyez la preuve de paiement à infocharityhopeafrica@gmail.com.';
+    });
+
+    // Donate mail
+    document.getElementById('donateEmailBtn')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const subject = encodeURIComponent('Demande de don / Sponsor');
+      const body = encodeURIComponent('Bonjour Charity & Hope,\n\nJe souhaite faire un don/sponsor. Montant / Modalité :\n\nMerci.\n\n--');
+      window.open('mailto:donatecharityhopeafrica@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+    });
+
+    // contact form
+    document.getElementById('contactForm')?.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const n = document.getElementById('cname').value.trim();
+      const em = document.getElementById('cemail').value.trim();
+      const msg = document.getElementById('cmessage').value.trim();
+      if(!n || !em || !msg){ document.getElementById('contactResult').innerText='Veuillez remplir tous les champs'; return; }
+      const subject = encodeURIComponent('Contact site — ' + n);
+      const body = encodeURIComponent('Nom: ' + n + '\nEmail: ' + em + '\n\nMessage:\n' + msg);
+      window.location.href = 'mailto:infocharityhopeafrica@gmail.com?subject=' + subject + '&body=' + body;
     });
   </script>
 </body>
