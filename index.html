@@ -1,847 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Charity & Hope Africa Empowerment</title>
-<meta name="description" content="Charity & Hope Africa Empowerment — événements, inscriptions, dons et actions pour l'autonomisation en Afrique." />
-<style>
-  :root{
-    --navy:#002147;
-    --gold:#d4af37;
-    --cream:#f8f8f4;
-    --muted:#6b7888;
-    --maxwidth:1100px;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,'Poppins',Arial,sans-serif;background:var(--cream);color:var(--navy)}
-  header{background:var(--navy);color:var(--cream);padding:14px 12px;position:sticky;top:0;z-index:60;box-shadow:0 4px 14px rgba(0,0,0,0.08)}
-  .nav{max-width:var(--maxwidth);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{width:68px;height:68px;object-fit:cover;border-radius:10px;border:3px solid var(--gold);background:#fff}
-  h1.site-title{margin:0;font-size:1.05rem;line-height:1;color:var(--cream)}
-  p.site-slogan{margin:0;font-size:0.82rem;color:var(--gold);opacity:0.95}
-  nav.menu a{color:var(--cream);text-decoration:none;margin:0 8px;font-weight:600}
-  nav.menu a:hover{text-decoration:underline}
-  .lang-select{background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--cream);padding:6px 10px;border-radius:6px}
-  main{max-width:var(--maxwidth);margin:26px auto;padding:0 16px}
-  .hero{background:linear-gradient(90deg,var(--navy),#123058); color:var(--cream); padding:48px;border-radius:12px; text-align:left; display:flex; gap:20px; align-items:center;}
-  .hero .left{flex:1}
-  .hero h2{margin:0 0 12px;font-size:2rem;color:var(--gold)}
-  .hero p{margin:0 0 18px;color:#e6eef8; max-width:720px}
-  .btn{background:var(--gold);color:var(--navy);padding:12px 20px;border-radius:28px;border:none;font-weight:700;cursor:pointer;display:inline-block;text-decoration:none}
-  section{margin-top:26px;padding:22px 0}
-  .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(2,13,23,0.04)}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media(max-width:900px){.grid{grid-template-columns:1fr}}
-  h2.section-title{color:var(--navy);margin:6px 0 12px}
-  .muted{color:var(--muted)}
-  .event-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
-  table{width:100%;border-collapse:collapse;margin-top:12px}
-  th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
-  th{background:var(--navy);color:var(--cream)}
-  .testimonial-wrap{display:flex;flex-direction:column;gap:12px}
-  .testimonial{background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(2,13,23,0.04)}
-  footer{background:var(--navy);color:var(--cream);padding:22px;margin-top:22px}
-  .small{font-size:0.9rem}
-  .field{display:block;margin-bottom:10px}
-  input[type="text"], input[type="email"], input[type="tel"], select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
-  input[type="file"]{padding:6px}
-  .tag{background:var(--gold);color:var(--navy);padding:6px 8px;border-radius:8px;font-weight:700}
-  .center{display:flex;justify-content:center;align-items:center}
-  .tiny{font-size:0.85rem;color:var(--muted)}
-  .mt8{margin-top:8px}
-  .mb8{margin-bottom:8px}
-  .btn-ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:20px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity & Hope Africa Empowerment</title>
+  <style>
+    :root {
+      --navy: #002147;
+      --gold: #d4af37;
+      --cream: #f8f8f4;
+      --maxwidth: 1100px;
+    }
+    * {box-sizing: border-box;}
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+    header {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: 0; left: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1%, transparent 50%);
+      animation: stars 15s linear infinite;
+    }
+    @keyframes stars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50px); }
+    }
+    .nav {
+      max-width: var(--maxwidth);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .nav img {
+      width: 65px;
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+    }
+    .nav-links a {
+      color: var(--cream);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .lang-switch {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    main { max-width: var(--maxwidth); margin: 20px auto; padding: 10px; }
+    section { margin-bottom: 40px; }
+    h1, h2 { color: var(--navy); }
+    h1 { font-size: 2rem; }
+    p { line-height: 1.6; }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    footer {
+      background: var(--navy);
+      color: var(--cream);
+      text-align: center;
+      padding: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    th { background: var(--navy); color: #fff; }
+    .testimonials {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+    }
+  </style>
 </head>
-<!-- ============================
-     FORMULAIRE D’INSCRIPTION
-     ============================ -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registerForm");
 
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("https://charityhope-backend.onrender.com/api/register", {
-            method: "POST",
-            body: formData,
-          });
-
-          const result = await response.json();
-
-          if (response.ok) {
-            alert("✅ Inscription réussie ! Votre code de billet : " + result.ticketCode);
-            form.reset();
-          } else {
-            alert("⚠️ Erreur : " + result.message);
-          }
-        } catch (error) {
-          console.error("❌ Erreur réseau :", error);
-          alert("❌ Une erreur s'est produite. Veuillez réessayer plus tard.");
-        }
-      });
-    } else {
-      console.warn("⚠️ Aucun formulaire avec l'ID #registerForm trouvé sur la page.");
-    }
-  });
-</script><!-- ============================
-     FORMULAIRE D’INSCRIPTION
-     ============================ -->
-<section id="inscription" class="p-8 bg-gray-50 rounded-2xl shadow-md max-w-3xl mx-auto mt-10">
-  <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
-    🎟️ Formulaire d’inscription aux événements
-  </h2>
-
-  <form id="registerForm" enctype="multipart/form-data" class="space-y-4">
-    <!-- Nom complet -->
-    <div>
-      <label class="block font-semibold mb-1">Nom complet</label>
-      <input type="text" name="fullName" required class="w-full border rounded-lg p-2" placeholder="Ex : Marie Ngo Essomba" />
-    </div>
-
-    <!-- Email -->
-    <div>
-      <label class="block font-semibold mb-1">Adresse e-mail</label>
-      <input type="email" name="email" required class="w-full border rounded-lg p-2" placeholder="exemple@email.com" />
-    </div>
-
-    <!-- Téléphone -->
-    <div>
-      <label class="block font-semibold mb-1">Téléphone</label>
-      <input type="tel" name="phone" required class="w-full border rounded-lg p-2" placeholder="+237 6XX XXX XXX" />
-    </div>
-
-    <!-- Type d’événement -->
-    <div>
-      <label class="block font-semibold mb-1">Événement</label>
-      <select name="eventType" required class="w-full border rounded-lg p-2">
-        <option value="">-- Sélectionnez un événement --</option>
-        <option value="Business Class Women">Business Class Women</option>
-        <option value="Soirée de Gala">Soirée de Gala</option>
-        <option value="Forum Africain des Jeunes Leaders">Forum Africain des Jeunes Leaders</option>
-        <option value="Charity Hope Day">Charity Hope Day</option>
-      </select>
-    </div>
-
-    <!-- Fichier à joindre -->
-    <div>
-      <label class="block font-semibold mb-1">Dossier / Document (PDF, DOCX)</label>
-      <input type="file" name="file" accept=".pdf,.doc,.docx" class="w-full border rounded-lg p-2" />
-    </div>
-
-    <!-- Moyen de réception du billet -->
-    <div>
-      <label class="block font-semibold mb-1">Moyen de réception du billet</label>
-      <select name="deliveryMethod" required class="w-full border rounded-lg p-2">
-        <option value="email">Par e-mail (recommandé)</option>
-        <option value="ticket">Retrait sur place (par ticket)</option>
-      </select>
-    </div>
-
-    <!-- Bouton d’envoi -->
-    <div class="text-center">
-      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg">
-        Envoyer mon inscription
-      </button>
-    </div>
-  </form>
-</section>
-
-<!-- Script de gestion du formulaire -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registerForm");
-
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("https://charityhope-backend.onrender.com/api/register", {
-            method: "POST",
-            body: formData,
-          });
-
-          const result = await response.json();
-
-          if (response.ok) {
-            alert("✅ Inscription réussie ! Votre code de billet : " + result.ticketCode);
-            form.reset();
-          } else {
-            alert("⚠️ Erreur : " + result.message);
-          }
-        } catch (error) {
-          console.error("❌ Erreur réseau :", error);
-          alert("❌ Une erreur s'est produite. Veuillez réessayer plus tard.");
-        }
-      });
-    } else {
-      console.warn("⚠️ Aucun formulaire avec l'ID #registerForm trouvé sur la page.");
-    }
-  });
-</script><!-- ============================
-     FORMULAIRE D’INSCRIPTION
-     ============================ -->
-<section id="inscription" class="p-8 bg-gray-50 rounded-2xl shadow-md max-w-3xl mx-auto mt-10">
-  <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
-    🎟️ Formulaire d’inscription aux événements
-  </h2>
-
-  <form id="registerForm" enctype="multipart/form-data" class="space-y-4">
-    <!-- Nom complet -->
-    <div>
-      <label class="block font-semibold mb-1">Nom complet</label>
-      <input type="text" name="fullName" required class="w-full border rounded-lg p-2" placeholder="Ex : Marie Ngo Essomba" />
-    </div>
-
-    <!-- Email -->
-    <div>
-      <label class="block font-semibold mb-1">Adresse e-mail</label>
-      <input type="email" name="email" required class="w-full border rounded-lg p-2" placeholder="exemple@email.com" />
-    </div>
-
-    <!-- Téléphone -->
-    <div>
-      <label class="block font-semibold mb-1">Téléphone</label>
-      <input type="tel" name="phone" required class="w-full border rounded-lg p-2" placeholder="+237 6XX XXX XXX" />
-    </div>
-
-    <!-- Type d’événement -->
-    <div>
-      <label class="block font-semibold mb-1">Événement</label>
-      <select name="eventType" required class="w-full border rounded-lg p-2">
-        <option value="">-- Sélectionnez un événement --</option>
-        <option value="Business Class Women">Business Class Women</option>
-        <option value="Soirée de Gala">Soirée de Gala</option>
-        <option value="Forum Africain des Jeunes Leaders">Forum Africain des Jeunes Leaders</option>
-        <option value="Charity Hope Day">Charity Hope Day</option>
-      </select>
-    </div>
-
-    <!-- Fichier à joindre -->
-    <div>
-      <label class="block font-semibold mb-1">Dossier / Document (PDF, DOCX)</label>
-      <input type="file" name="file" accept=".pdf,.doc,.docx" class="w-full border rounded-lg p-2" />
-    </div>
-
-    <!-- Moyen de réception du billet -->
-    <div>
-      <label class="block font-semibold mb-1">Moyen de réception du billet</label>
-      <select name="deliveryMethod" required class="w-full border rounded-lg p-2">
-        <option value="email">Par e-mail (recommandé)</option>
-        <option value="ticket">Retrait sur place (par ticket)</option>
-      </select>
-    </div>
-
-    <!-- Bouton d’envoi -->
-    <div class="text-center">
-      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg">
-        Envoyer mon inscription
-      </button>
-    </div>
-  </form>
-
-  <!-- Page de confirmation cachée -->
-  <div id="confirmationMessage" class="hidden text-center p-8 bg-white rounded-xl shadow-lg mt-6">
-    <h3 class="text-2xl font-bold text-green-600 mb-4">✅ Inscription réussie !</h3>
-    <p class="text-gray-700 mb-2">Merci <span id="confirmName"></span> 🎉</p>
-    <p class="text-gray-700">Votre code de billet est : <b id="confirmTicket" class="text-blue-700"></b></p>
-    <p class="text-sm text-gray-500 mt-2">
-      Vous recevrez également un e-mail de confirmation avec votre billet et votre QR code.
-    </p>
-    <button id="backHomeBtn" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg">
-      Retour à l’accueil
-    </button>
-  </div>
-</section>
-
-<!-- Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registerForm");
-    const confirmation = document.getElementById("confirmationMessage");
-    const confirmName = document.getElementById("confirmName");
-    const confirmTicket = document.getElementById("confirmTicket");
-    const backHomeBtn = document.getElementById("backHomeBtn");
-
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("https://charityhope-backend.onrender.com/api/register", {
-            method: "POST",
-            body: formData,
-          });
-
-          const result = await response.json();
-
-          if (response.ok) {
-            // Cache le formulaire
-            form.classList.add("hidden");
-            // Affiche la confirmation
-            confirmation.classList.remove("hidden");
-            confirmName.textContent = formData.get("fullName");
-            confirmTicket.textContent = result.ticketCode;
-          } else {
-            alert("⚠️ Erreur : " + result.message);
-          }
-        } catch (error) {
-          console.error("❌ Erreur réseau :", error);
-          alert("❌ Une erreur s'est produite. Veuillez réessayer plus tard.");
-        }
-      });
-    }
-
-    if (backHomeBtn) {
-      backHomeBtn.addEventListener("click", () => {
-        // Retour à la page d'accueil
-        window.location.href = "#accueil";
-        form.reset();
-        confirmation.classList.add("hidden");
-        form.classList.remove("hidden");
-      });
-    }
-  });
-</script><body>
-<header>
-  <div class="nav" role="navigation" aria-label="Main navigation">
-    <div class="brand">
-      <img src="logo-chat.png" alt="Charity & Hope Africa Empowerment logo" id="site-logo" onerror="this.style.display='none'">
-      <div>
-        <h1 class="site-title">Charity & Hope Africa Empowerment</h1>
-        <p class="site-slogan">Connecter, Inspirer, Transformer l’Afrique</p>
+<body>
+  <header>
+    <div class="nav">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="logo-chat.png" alt="Logo Charity & Hope Africa" />
+        <strong>Charity & Hope Africa Empowerment</strong>
       </div>
-    </div>
-
-    <div style="display:flex;align-items:center;gap:12px">
-      <nav class="menu" aria-label="menu">
-        <a href="#accueil">Accueil</a>
-        <a href="#apropos">À propos</a>
-        <a href="#actions">Nos actions</a>
+      <div class="nav-links">
+        <a href="#about">À propos</a>
         <a href="#events">Événements</a>
-        <a href="#don">Faire un don</a>
-        <a href="#legal">Mentions</a>
-      </nav>
-
-      <select id="lang" class="lang-select" aria-label="Choisir la langue">
-        <option value="fr">Français</option>
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="de">Deutsch</option>
-        <option value="zh">中文</option>
+        <a href="#partners">Partenaires</a>
+        <a href="#donations">Faire un don</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <select class="lang-switch" id="langSwitch">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
       </select>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <!-- HERO -->
-  <section id="accueil" class="hero" aria-labelledby="hero-title">
-    <div class="left">
-      <h2 id="hero-title">Bienvenue sur Charity & Hope Africa Empowerment</h2>
-      <p>Nous réunissons plus de <strong>2000 participants</strong> venant de partout pour inspirer, financer et transformer des projets à fort impact social en Afrique.</p>
-      <div style="margin-top:18px">
-        <a class="btn" href="#events">Découvrir nos événements</a>
-        <a class="btn-ghost" href="#don" style="margin-left:12px">Faire un don</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <!-- SECTION ACCUEIL -->
+    <section id="home" style="text-align:center;margin-top:30px;">
+      <h1>Bienvenue sur la plateforme Charity & Hope Africa Empowerment</h1>
+      <p>Une plateforme réunissant plus de <strong>2000 participants</strong> à chaque édition pour <strong>l’impact, l’innovation, la fraternité</strong> et le <strong>financement des projets</strong>.</p>
+      <a href="#events" class="btn">Découvrir nos événements</a>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="apropos">
-    <div class="card">
-      <h2 class="section-title">À propos de nous</h2>
-      <div class="grid">
-        <div>
-          <p><strong>Charity & Hope Africa Empowerment</strong> est une organisation non gouvernementale (ONG) fondée en 2024 et enregistrée au Cameroun. Nous promouvons la solidarité, l'entrepreneuriat, la santé, l'éducation et le développement durable pour l'autonomisation des communautés africaines.</p>
-          <h3>Vision</h3>
-          <p>Un avenir où chaque femme et chaque enfant en Afrique a accès à des opportunités économiques durables, à la santé et à l'éducation.</p>
-        </div>
-        <div>
-          <h3>Mission</h3>
-          <p>Renforcer les capacités des communautés vulnérables, notamment les femmes et les jeunes, via la formation, l'entrepreneuriat, l'agriculture durable et l'assistance sociale ciblée.</p>
-          <p class="tiny mt8"><strong>Lieu des événements :</strong> Yaoundé, Cameroun</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACTIONS -->
-  <section id="actions">
-    <h2 class="section-title">Nos actions</h2>
-    <div class="card">
-      <div class="grid">
-        <div>
-          <h3>Santé publique & bien-être</h3>
-          <p>Campagnes sanitaires, sensibilisation, santé maternelle et nutrition.</p>
-        </div>
-        <div>
-          <h3>Développement agricole & pisciculture</h3>
-          <p>Formations pratiques en agriculture durable et pisciculture pour l'autonomie alimentaire.</p>
-        </div>
-        <div>
-          <h3>Autonomisation des femmes</h3>
-          <p>Ateliers, formation, accès au microcrédit et coaching entrepreneurial.</p>
-        </div>
-        <div>
-          <h3>Éducation & jeunesse</h3>
-          <p>Bourses scolaires, soutien aux orphelinats et réinsertion sociale.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTS -->
-  <section id="events">
-    <h2 class="section-title">Événements & Calendrier</h2>
-
-    <div class="grid">
-      <div class="event-card">
-        <h3>Business Class Women Competition (BCWC)</h3>
-        <p class="tiny"><strong>Date :</strong> 9 – 25 décembre 2025 • <strong>Clôture :</strong> 15 décembre 2025</p>
-        <p>Compétition d’entrepreneuriat pour femmes (18–35 ans). Les candidates soumettent un plan d’affaires détaillé (maximum 20 pages). Les meilleurs projets reçoivent un accompagnement et un financement.</p>
-        <p><strong>Frais :</strong> 30 000 XAF (sans logement) • 50 000 XAF (tout inclus)</p>
-      </div>
-
-      <div class="event-card">
-        <h3>Soirée de Gala & Awards de l'Impact</h3>
-        <p class="tiny"><strong>Date :</strong> 25 décembre 2025 • <strong>Clôture :</strong> 15 décembre 2025</p>
-        <p>Soirée de reconnaissance et collecte de fonds.</p>
-        <table aria-label="billets gala">
-          <thead><tr><th>Catégorie</th><th>Prix (XAF)</th><th>Avantages</th></tr></thead>
-          <tbody>
-            <tr><td>Excellence (VIP)</td><td>200 000</td><td>Table VIP, dîner, photo officielle, visibilité</td></tr>
-            <tr><td>Prestige</td><td>100 000</td><td>Accès priorité, buffet, photo souvenir</td></tr>
-            <tr><td>Or</td><td>50 000</td><td>Accès complet, buffet</td></tr>
-            <tr><td>Argent</td><td>25 000</td><td>Accès salle principale, collation</td></tr>
-            <tr><td>Étudiant</td><td>10 000</td><td>Accès réduit, collation</td></tr>
-            <tr><td>Jeune</td><td>5 000</td><td>Accès économique</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div style="margin-top:14px" class="card">
-      <h3>Autres événements annuels</h3>
-      <ul style="text-align:left;max-width:900px;margin:auto;">
-        <li><strong>Étoiles Filantes de l’Afrique</strong> — 15–20 juillet 2025. Clôture : 30 juin 2025. Frais : 20 000 / 40 000 XAF.</li>
-        <li><strong>Challenge Vacances & Fournitures</strong> — 1–7 août 2025. Clôture : 30 juin 2025. Frais : 10 000 XAF.</li>
-        <li><strong>Opération Back to School</strong> — 1–7 septembre 2025. Clôture : 31 août 2025. Gratuit pour les bénéficiaires.</li>
-        <li><strong>Pique-Nique de l’Amour Fraternel</strong> — Février. Clôture : 10 février 2025. Contribution : 2 000 XAF.</li>
+    <!-- À PROPOS -->
+    <section id="about">
+      <h2>À propos de nous</h2>
+      <p>Charity & Hope Africa Empowerment est une organisation non-gouvernementale (ONG) à but non lucratif basée à Yaoundé, Cameroun. Fondée en 2024, elle œuvre pour le développement humain, la solidarité, la dignité et l’autonomisation économique à travers des actions sociales, éducatives, sanitaires et entrepreneuriales.</p>
+      <h3>Vision</h3>
+      <p>Un avenir où chaque femme et chaque enfant en Afrique bénéficie d’un accès équitable à la santé, à l’éducation et à des opportunités économiques durables.</p>
+      <h3>Mission</h3>
+      <p>Accompagner les communautés vulnérables, notamment les femmes et les jeunes, à travers des programmes d’entrepreneuriat, d’éducation, de santé et de développement agricole.</p>
+      <h3>Nos objectifs</h3>
+      <ul>
+        <li>Favoriser l’autonomie économique et sociale des femmes et des jeunes.</li>
+        <li>Encourager la solidarité et la dignité humaine.</li>
+        <li>Créer un réseau panafricain d’impact durable.</li>
       </ul>
-    </div>
+    </section>
 
-    <!-- Registration form anchor -->
-    <div id="formulaire" class="mt8"></div>
-  </section>
+    <!-- ÉVÉNEMENTS -->
+    <section id="events">
+      <h2>Nos Événements 2025</h2>
+      <p>Découvrez nos événements majeurs et inscrivez-vous en ligne.</p>
+      <ul>
+        <li><a href="events/business-class.html">Business Class Women Competition (9–25 Décembre)</a></li>
+        <li><a href="events/pique-nique.html">Pique-Nique de l’Amour Fraternel (10 Février)</a></li>
+        <li><a href="events/etoiles-filantes.html">Étoiles Filantes de l’Afrique (Juillet)</a></li>
+        <li><a href="events/challenge-vacances.html">Challenge Vacances & Fournitures (Août)</a></li>
+        <li><a href="events/back-to-school.html">Opération Back to School (Septembre)</a></li>
+        <li><a href="events/gala.html">Soirée de Gala & Awards de l’Impact (25 Décembre)</a></li>
+      </ul>
+    </section>
 
-  <!-- FORMULAIRES D'INSCRIPTION -->
-  <section aria-labelledby="form-title">
-    <h2 id="form-title" class="section-title">Inscription / Dépôt de dossier</h2>
-    <div class="card" style="max-width:1000px;margin:auto">
-      <p class="tiny">Remplissez ce formulaire pour vous inscrire à un événement, réserver un stand ou soumettre un dossier. Après soumission un code unique est généré. Si vous n'avez pas de backend, le formulaire télécharge un récapitulatif et ouvre votre client mail pour envoyer les métadonnées (les fichiers devront être envoyés séparément si nécessaire).</p>
-
-      <form id="submissionForm" enctype="multipart/form-data">
-        <div class="grid">
-          <div>
-            <label class="field">Nom complet *</label>
-            <input type="text" id="name" required>
-          </div>
-          <div>
-            <label class="field">Email *</label>
-            <input type="email" id="email" required>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div>
-            <label class="field">Téléphone</label>
-            <input type="tel" id="phone">
-          </div>
-          <div>
-            <label class="field">Ville / Pays</label>
-            <input type="text" id="city" placeholder="Yaoundé, Cameroun">
-          </div>
-        </div>
-
-        <label class="field">Choisissez l'événement *</label>
-        <select id="event" required>
-          <option value="BCWC">Business Class Women Competition (BCWC)</option>
-          <option value="GALA">Soirée de Gala & Awards</option>
-          <option value="STAND">Réservation de stand</option>
-          <option value="ETOILE">Étoiles Filantes de l'Afrique</option>
-          <option value="CHALLENGE">Challenge Vacances</option>
-          <option value="BACKSCHOOL">Opération Back to School</option>
-          <option value="PIQUE">Pique-Nique de l'Amour Fraternel</option>
-        </select>
-
-        <label class="field">Type / Catégorie (ex: PARTICIPANTE, GALA-VIP, STAND-3M)</label>
-        <input type="text" id="category" placeholder="ex: PARTICIPANTE / GALA-VIP / STAND-2M">
-
-        <label class="field">Message / Description</label>
-        <textarea id="message" rows="4" placeholder="Parlez-nous du projet, détails du stand, etc."></textarea>
-
-        <label class="field">Téléchargez vos documents (PDF, JPG, PNG, DOCX) — max total 30MB</label>
-        <input type="file" id="files" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-
-        <label class="field">Mode de réception du billet / confirmation</label>
-        <select id="delivery">
-          <option value="email">Envoi électronique (PDF)</option>
-          <option value="ticket">Ticket numérique (QR code)</option>
-          <option value="ship">Envoi physique (frais à la charge du client)</option>
-        </select>
-
-        <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-          <button id="submitBtn" class="btn" type="button">Soumettre</button>
-          <div id="formResult" class="tiny"></div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- TICKETS & STANDS -->
-  <section id="tickets" class="mt8">
-    <h2 class="section-title">Billets & Stands</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Acheter un billet — Soirée de Gala</h3>
-        <label class="field">Catégorie</label>
-        <select id="ticketCategory">
-          <option value="GALA-VIP">Excellence (VIP) — 200 000 XAF</option>
-          <option value="GALA-PRESTIGE">Prestige — 100 000 XAF</option>
-          <option value="GALA-GOLD">Or — 50 000 XAF</option>
-          <option value="GALA-SILVER">Argent — 25 000 XAF</option>
-          <option value="GALA-STANDARD">Standard — 10 000 XAF</option>
-          <option value="GALA-YOUTH">Jeune — 5 000 XAF</option>
-        </select>
-
-        <label class="field">Nom complet</label>
-        <input id="ticketName" type="text" placeholder="Nom complet">
-
-        <div style="margin-top:10px">
-          <button class="btn" id="buyTicketBtn">Réserver (générer code)</button>
-        </div>
-        <div id="ticketResult" class="tiny mt8"></div>
+    <!-- TÉMOIGNAGES -->
+    <section id="testimonials">
+      <h2>Témoignages</h2>
+      <div class="testimonials">
+        <p><strong>Marie T.</strong> – “Grâce à la Business Class Women, j’ai lancé ma marque locale financée à 400 000 XAF !”</p>
+        <p><strong>Jacques N.</strong> – “Les séminaires m’ont inspiré à créer une coopérative agricole.”</p>
+        <p><strong>Rita A.</strong> – “Une expérience incroyable ! Beaucoup de soutien et de solidarité.”</p>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Réserver un stand</h3>
-        <label class="field">Surface souhaitée</label>
-        <select id="standSize">
-          <option value="1m">1 m² — 250 000 XAF</option>
-          <option value="2m">2 m² — 300 000 XAF</option>
-          <option value="3m">3 m² — 350 000 XAF</option>
-          <option value="6m">6 m² — 500 000 XAF</option>
-        </select>
-        <label class="field">Nom de l'exposant</label>
-        <input id="standName" type="text" placeholder="Nom de l'exposant">
-        <div style="margin-top:10px"><button class="btn" id="reserveStandBtn">Réserver stand</button></div>
-        <div id="standResult" class="tiny mt8"></div>
-      </div>
-    </div>
-  </section>
+    <!-- PARTENAIRES -->
+    <section id="partners">
+      <h2>Devenir partenaire</h2>
+      <p>Rejoignez-nous pour soutenir nos actions à fort impact. Les partenariats débutent à 5 000 000 FCFA.</p>
+      <a href="#contact" class="btn">Nous contacter</a>
+    </section>
 
-  <!-- DONATIONS -->
-  <section id="don" class="mt8">
-    <h2 class="section-title">Faire un don</h2>
-    <div class="card" style="max-width:900px;margin:auto">
-      <p>Vos dons soutiennent nos actions : formations, santé, aides sociales et financement de projets.</p>
-      <div style="text-align:left;max-width:600px;margin:auto">
-        <p>📱 <strong>Orange Money :</strong> +237 691 238 359</p>
-        <p>📱 <strong>MTN Mobile Money :</strong> +237 652 075 162</p>
-        <p>🏦 <strong>Compte bancaire :</strong> 4187 6228 8308 5704</p>
+    <!-- DONS -->
+    <section id="donations">
+      <h2>Faire un don</h2>
+      <p>Votre soutien nous aide à transformer des vies.</p>
+      <ul>
+        <li>Orange Money : <strong>+237 691 238 359</strong></li>
+        <li>MTN Mobile Money : <strong>+237 652 075 162</strong></li>
+        <li>Email dons : <strong>donatecharityhopeafrica@gmail.com</strong></li>
+        <li>Compte bancaire : <strong>4187 6228 8308 5704</strong></li>
+      </ul>
+    </section>
 
-        <p class="tiny">Pour enregistrer un don en ligne, envoyez-nous les détails en cliquant ci-dessous (le mail inclura les informations à compléter, puis notre équipe vous répondra).</p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contactez-nous</h2>
+      <p>📍 Yaoundé — Cameroun</p>
+      <p>📧 infocharityhopeafrica@gmail.com</p>
+      <p>📞 +237 652 075 162</p>
+    </section>
+  </main>
 
-        <div style="display:flex;gap:10px;margin-top:10px">
-          <a class="btn" href="#" id="donateEmailBtn">Envoyer les détails du don</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer>
+    <p>© 2025 Charity & Hope Africa Empowerment — Tous droits réservés.</p>
+  </footer>
 
-  <!-- TESTIMONIALS (11) -->
-  <section id="testimonials" class="mt8">
-    <h2 class="section-title">Témoignages</h2>
-    <div class="card testimonial-wrap">
-      <div class="testimonial"><strong>Amina Tchouamo — Douala</strong><p>Participer au BCWC m’a permis de structurer mon idée et d’obtenir un accompagnement pour lancer ma marque de cosmétiques naturels.</p></div>
-      <div class="testimonial"><strong>Clarisse Noubissi — Yaoundé</strong><p>Cette expérience m’a donné confiance. J’ai aujourd’hui un centre de transformation agroalimentaire.</p></div>
-      <div class="testimonial"><strong>Evelyne Kemayou — Bafoussam</strong><p>Les formations m’ont aidée à mieux gérer mon activité et à organiser mes finances.</p></div>
-      <div class="testimonial"><strong>Dr. Jean-Paul Mengue — Yaoundé</strong><p>Le Gala permet des rencontres de qualité et des partenariats qui durent.</p></div>
-      <div class="testimonial"><strong>Sophie Ndong — Libreville</strong><p>Voyager pour assister au Gala valait la peine : échanges riches et organisation impeccable.</p></div>
-      <div class="testimonial"><strong>Maman Elise Nkoa — Yaoundé</strong><p>Le pique-nique a renforcé la solidarité de notre communauté.</p></div>
-      <div class="testimonial"><strong>Prince Talla — Bamenda</strong><p>Première participation — j’ai appris la valeur du vivre-ensemble.</p></div>
-      <div class="testimonial"><strong>Ruth Aboubakar — Garoua</strong><p>Grâce à Étoiles Filantes, j’ai pu monter sur une grande scène et rencontrer un producteur.</p></div>
-      <div class="testimonial"><strong>Kevin Nsom — Yaoundé</strong><p>Le concours m’a aidé à financer l’enregistrement de mon premier single.</p></div>
-      <div class="testimonial"><strong>Grace Mbianda — Douala</strong><p>Orpheline, j’ai reçu des fournitures scolaires; j’ai repris confiance pour mes études.</p></div>
-      <div class="testimonial"><strong>Samuel Etoundi — Bafia</strong><p>Les ateliers m’ont donné des compétences et une bourse pour la rentrée.</p></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="mt8">
-    <h2 class="section-title">Contact</h2>
-    <div class="card" style="max-width:900px;margin:auto">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-        <div>
-          <p><strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com">infocharityhopeafrica@gmail.com</a></p>
-          <p><strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com">infobusinesclassewomen@gmail.com</a></p>
-          <p><strong>Dons & Sponsors :</strong> <a href="mailto:donatecharityhopeafrica@gmail.com">donatecharityhopeafrica@gmail.com</a></p>
-          <p><strong>Téléphone :</strong> +237 652 075 162</p>
-          <p><strong>Lieu des événements :</strong> Yaoundé, Cameroun</p>
-        </div>
-        <div>
-          <form id="contactForm">
-            <label class="field">Nom</label><input type="text" id="cname" required>
-            <label class="field">Email</label><input type="email" id="cemail" required>
-            <label class="field">Message</label><textarea id="cmessage" rows="4" required></textarea>
-            <div style="margin-top:10px"><button class="btn" id="contactSend">Envoyer</button></div>
-            <div id="contactResult" class="tiny mt8"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEGAL (policy + terms) -->
-  <section id="legal" class="mt8">
-    <h2 class="section-title">Politique de confidentialité</h2>
-    <div class="card">
-      <p><strong>Introduction :</strong> Charity & Hope Africa Empowerment respecte la vie privée et collecte seulement les données nécessaires à la gestion des inscriptions, dons et communications.</p>
-      <p><strong>Données collectées :</strong> nom, email, téléphone, documents soumis pour candidatures.</p>
-      <p><strong>Utilisation :</strong> gérer les inscriptions, envoyer confirmations, délivrer reçus et améliorer les programmes.</p>
-      <p><strong>Cookies :</strong> le site peut utiliser des cookies pour améliorer la navigation. Vous pouvez désactiver les cookies dans votre navigateur.</p>
-      <p><strong>Contact :</strong> infocharityhopeafrica@gmail.com</p>
-    </div>
-
-    <h2 class="section-title" style="margin-top:18px">Conditions d'utilisation</h2>
-    <div class="card">
-      <p>En utilisant ce site, vous acceptez les conditions listées : fournir des informations exactes, respecter les délais et conditions d'inscription, accepter que les dons ne sont pas remboursables sauf annulation officielle.</p>
-      <p>Propriété intellectuelle : tous les contenus sont réservés à Charity & Hope Africa Empowerment.</p>
-      <p>Dernière mise à jour : Octobre 2025</p>
-    </div>
-
-    <div style="margin-top:18px" class="center">
-      <button class="btn" onclick="window.location.href='#accueil'">← Retour à l’accueil</button>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div style="max-width:var(--maxwidth);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px">
-    <div>
-      <p style="margin:0"><strong>Charity & Hope Africa Empowerment</strong></p>
-      <p style="margin:0;font-size:0.9rem">© 2025 Charity & Hope Africa Empowerment — Tous droits réservés.</p>
-    </div>
-
-    <div style="text-align:right">
-      <p style="margin:0">📧 infocharityhopeafrica@gmail.com</p>
-      <p style="margin:0">📞 +237 652 075 162</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* -------------------------
-   Simple multilingual text replacement (already provided earlier)
-   Minimal: we keep menu/hero texts handled here if needed later.
-   ------------------------- */
-const i18n = {
-  fr: { /* minimal — page already mostly in FR */ },
-  en: { /* empty placeholder */ },
-  es: {},
-  de: {},
-  zh: {}
-};
-document.getElementById('lang').addEventListener('change', (e)=>{
-  // placeholder: currently texts remain in French.
-  // Could expand translations later.
-  alert('La fonctionnalité multilingue sera activée progressivement. Langue choisie: '+e.target.value);
-});
-
-/* -------------------------
-   Code generation util
-   Format: [EVENT]-[TYPE]-[SEQ]-[YY] e.g. GALA-VIP-243-25
-   ------------------------- */
-function genSeq(){ return Math.floor(100 + Math.random()*900); }
-function shortYear(){ return String(new Date().getFullYear()).slice(-2); }
-function sanitize(s){ return (s||'').toString().toUpperCase().replace(/\s+/g,'-').replace(/[^A-Z0-9\-]/g,''); }
-function buildCode(event, type){
-  const ev = sanitize(event);
-  const t = sanitize(type || 'STD');
-  return `${ev}-${t}-${genSeq()}-${shortYear()}`;
-}
-
-/* -------------------------
-   Submission handler
-   Routes mails according to event:
-     - BCWC -> infobusinesclassewomen@gmail.com
-     - Donations -> donatecharityhopeafrica@gmail.com (handled elsewhere)
-     - Others -> infocharityhopeafrica@gmail.com
-   No backend: create summary file & open mailto with metadata
-   ------------------------- */
-document.getElementById('submitBtn').addEventListener('click', ()=>{
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const city = document.getElementById('city').value.trim();
-  const event = document.getElementById('event').value;
-  const category = document.getElementById('category').value.trim() || (event==='BCWC' ? 'PARTICIPANTE' : 'STANDARD');
-  const message = document.getElementById('message').value.trim();
-  const delivery = document.getElementById('delivery').value;
-  const filesInput = document.getElementById('files');
-
-  if(!name || !email){ document.getElementById('formResult').innerText = 'Veuillez compléter nom et email.'; return; }
-
-  const code = buildCode(event, category);
-  const date = new Date().toLocaleString();
-
-  // pick recipient
-  let to = 'infocharityhopeafrica@gmail.com';
-  if(event === 'BCWC') to = 'infobusinesclassewomen@gmail.com';
-  // other events: infocharity...
-
-  // build summary text
-  const fileNames = filesInput.files ? Array.from(filesInput.files).map(f=>f.name).join(', ') : 'Aucun';
-  const lines = [
-    `Charity & Hope Africa Empowerment — Soumission`,
-    `Code: ${code}`,
-    `Date: ${date}`,
-    `Nom: ${name}`,
-    `Email: ${email}`,
-    `Téléphone: ${phone}`,
-    `Ville: ${city}`,
-    `Événement: ${event}`,
-    `Catégorie: ${category}`,
-    `Mode de réception: ${delivery}`,
-    `Fichiers: ${fileNames}`,
-    `Message: ${message}`
-  ].join('\n');
-
-  // try backend POST (non blocking)
-  fetch('/api/submit', {method:'POST', body: (function(){ const fd = new FormData(); fd.append('name',name); fd.append('email',email); fd.append('phone',phone); fd.append('city',city); fd.append('event',event); fd.append('category',category); fd.append('message',message); fd.append('code',code); fd.append('delivery',delivery); if(filesInput.files){ for(let i=0;i<filesInput.files.length;i++) fd.append('files', filesInput.files[i]); } return fd; })()})
-  .then(res=>{
-    if(res.ok) return res.json();
-    throw new Error('No backend or error');
-  }).then(j=>{
-    document.getElementById('formResult').innerHTML = `Soumission reçue. Code : <strong>${j.code || code}</strong>. Vérifiez votre email.`;
-  }).catch(err=>{
-    // fallback -> download summary + open mailto
-    const blob = new Blob([lines], {type:'text/plain;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = `${code}_summary.txt`; a.click(); URL.revokeObjectURL(url);
-
-    const subject = encodeURIComponent(`[Soumission] ${code} - ${event}`);
-    const body = encodeURIComponent(lines + '\n\n(Attention : fichiers non attachés via mailto. Si vous avez des fichiers, veuillez répondre au mail avec les pièces jointes ou envoyer à l\'adresse indiquée.)');
-    window.open(`mailto:${to}?subject=${subject}&body=${body}`, '_blank');
-
-    document.getElementById('formResult').innerHTML = `Soumission locale créée. Code : <strong>${code}</strong>. Un message s'est ouvert pour envoyer les métadonnées à <strong>${to}</strong>.`;
-  });
-});
-
-/* -------------------------
-   Ticket purchase (frontend simulated)
-   -> Generates ticket summary and mailto to info (or could be changed)
-   ------------------------- */
-document.getElementById('buyTicketBtn').addEventListener('click', ()=>{
-  const cat = document.getElementById('ticketCategory').value;
-  const name = (document.getElementById('ticketName').value || 'Invité').trim();
-  const code = buildCode('GALA', cat);
-  const lines = [
-    `Billet — Soirée de Gala`,
-    `Code: ${code}`,
-    `Nom: ${name}`,
-    `Catégorie: ${cat}`,
-    `Date: 25 décembre 2025`,
-    `Lieu: Yaoundé`
-  ].join('\n');
-
-  // download
-  const blob = new Blob([lines], {type:'text/plain;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = `${code}_ticket.txt`; a.click(); URL.revokeObjectURL(url);
-
-  // mailto to info
-  const subject = encodeURIComponent(`Achat billet ${code}`);
-  const body = encodeURIComponent(lines);
-  window.open(`mailto:infocharityhopeafrica@gmail.com?subject=${subject}&body=${body}`, '_blank');
-
-  document.getElementById('ticketResult').innerHTML = `Billet généré — code : <strong>${code}</strong>. Un mail a été préparé vers infocharityhopeafrica@gmail.com.`;
-});
-
-/* -------------------------
-   Stand reservation (frontend simulated)
-   ------------------------- */
-document.getElementById('reserveStandBtn').addEventListener('click', ()=>{
-  const size = document.getElementById('standSize').value;
-  const name = (document.getElementById('standName').value || 'Exposant').trim();
-  const code = buildCode('STAND', size);
-  const price = size === '1m' ? '250000' : size === '2m' ? '300000' : size === '3m' ? '350000' : '500000';
-  const lines = [
-    `Réservation Stand`,
-    `Code: ${code}`,
-    `Nom exposant: ${name}`,
-    `Surface: ${size}`,
-    `Montant estimé (XAF): ${price}`
-  ].join('\n');
-
-  const blob = new Blob([lines], {type:'text/plain;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = `${code}_stand.txt`; a.click(); URL.revokeObjectURL(url);
-
-  const subject = encodeURIComponent(`Réservation stand ${code}`);
-  const body = encodeURIComponent(lines);
-  window.open(`mailto:infocharityhopeafrica@gmail.com?subject=${subject}&body=${body}`, '_blank');
-
-  document.getElementById('standResult').innerHTML = `Réservation locale créée — code : <strong>${code}</strong>. Envoyez la preuve de paiement à infocharityhopeafrica@gmail.com.`;
-});
-
-/* -------------------------
-   Donate button -> opens mailto to donate email with template
-   ------------------------- */
-document.getElementById('donateEmailBtn').addEventListener('click', (e)=>{
-  e.preventDefault();
-  const subject = encodeURIComponent('Demande de don / Sponsor');
-  const body = encodeURIComponent('Bonjour Charity & Hope,\n\nJe souhaite faire un don/sponsor. Montant / Modalité :\n\nMerci.\n\n--');
-  window.open(`mailto:donatecharityhopeafrica@gmail.com?subject=${subject}&body=${body}`, '_blank');
-});
-
-/* -------------------------
-   Contact form -> sends to infocharityhopeafrica@gmail.com via mailto
-   ------------------------- */
-document.getElementById('contactSend').addEventListener('click', (ev)=>{
-  ev.preventDefault();
-  const n = document.getElementById('cname').value.trim();
-  const em = document.getElementById('cemail').value.trim();
-  const msg = document.getElementById('cmessage').value.trim();
-  if(!n || !em || !msg){ document.getElementById('contactResult').innerText='Veuillez remplir tous les champs'; return; }
-  const subject = encodeURIComponent(`Contact site — ${n}`);
-  const body = encodeURIComponent(`Nom: ${n}\nEmail: ${em}\n\nMessage:\n${msg}`);
-  window.location.href = `mailto:infocharityhopeafrica@gmail.com?subject=${subject}&body=${body}`;
-});
-
-/* -------------------------
-   Smooth scroll for internal links
-   ------------------------- */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', (e)=>{
-    const href = a.getAttribute('href');
-    if(href === '#') return;
-    const target = document.querySelector(href);
-    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-  });
-});
-</script>
+  <script>
+    const switcher = document.getElementById("langSwitch");
+    switcher.addEventListener("change", () => {
+      alert("🌍 La version multilingue sera activée prochainement !");
+    });
+  </script>
 </body>
 </html>
