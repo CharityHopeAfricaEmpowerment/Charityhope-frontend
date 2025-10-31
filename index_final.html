@@ -340,17 +340,62 @@
     </div>
   </section>
 
-  <section id="contact" style="animation-delay:0.16s">
-    <h2 class="section-title">Contact</h2>
-    <div class="card" style="max-width:900px;margin:auto">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-        <div>
-          <p><strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com">infocharityhopeafrica@gmail.com</a></p>
-          <p><strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com">infobusinesclassewomen@gmail.com</a></p>
-          <p><strong>Dons & Sponsors :</strong> <a href="mailto:donatecharityhopeafrica@gmail.com">donatecharityhopeafrica@gmail.com</a></p>
-          <p><strong>Téléphone :</strong> +237 652 075 162</p>
-          <p><strong>Lieu des événements :</strong> Yaoundé, Cameroun</p>
-        </div>
+  <!-- Section Contact -->
+<section id="contact" style="padding:60px 20px; background-color:#002147; color:#f8f8f4; text-align:center;">
+  <h2 style="color:#d4af37; margin-bottom:30px;">Contactez-nous</h2>
+  <p style="max-width:650px; margin:0 auto 30px;">
+    Vous souhaitez collaborer, soutenir nos actions, participer à nos programmes, ou obtenir plus d’informations ?  
+    Écrivez-nous dès aujourd’hui — nous serons heureux de vous répondre 🌍
+  </p>
+
+  <div style="margin-bottom:30px; line-height:1.8em;">
+    <p>📧 <strong>Email général :</strong> <a href="mailto:infocharityhopeafrica@gmail.com" style="color:#d4af37;">infocharityhopeafrica@gmail.com</a></p>
+    <p>💼 <strong>Business Class Women :</strong> <a href="mailto:infobusinesclassewomen@gmail.com" style="color:#d4af37;">infobusinesclassewomen@gmail.com</a></p>
+    <p>💖 <strong>Dons & Soutien :</strong> <a href="mailto:donatecharity&hopeafrica@gmail.com" style="color:#d4af37;">donatecharity&hopeafrica@gmail.com</a></p>
+    <p>📞 <strong>Téléphone :</strong> +237 652 075 162</p>
+    <p>📍 <strong>Adresse :</strong> Yaoundé, Cameroun</p>
+  </div>
+
+  <!-- Formulaire de contact -->
+  <form id="contactForm" style="max-width:500px; margin:0 auto; text-align:left;">
+    <label>Nom complet :</label>
+    <input type="text" id="name" placeholder="Votre nom" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+
+    <label>Email :</label>
+    <input type="email" id="email" placeholder="Votre adresse email" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+
+    <label>Sujet :</label>
+    <select id="subject" style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+      <option value="general">Informations générales</option>
+      <option value="business">Business Class Women</option>
+      <option value="don">Dons & Soutien</option>
+    </select>
+
+    <label>Message :</label>
+    <textarea id="message" placeholder="Votre message..." rows="4" required style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;"></textarea>
+
+    <button type="button" onclick="sendEmail()" style="background-color:#d4af37; color:#002147; border:none; padding:12px 25px; font-size:1em; border-radius:25px; cursor:pointer; display:block; margin:auto;">
+      Envoyer le message
+    </button>
+  </form>
+</section>
+
+<script>
+  function sendEmail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    let to = "";
+    if (subject === "general") to = "infocharityhopeafrica@gmail.com";
+    else if (subject === "business") to = "infobusinesclassewomen@gmail.com";
+    else if (subject === "don") to = "donatecharity&hopeafrica@gmail.com";
+
+    const mailtoLink = `mailto:${to}?subject=Message de ${name}&body=De : ${name} (${email})%0D%0A%0D%0A${message}`;
+    window.location.href = mailtoLink;
+  }
+</script>
         <div>
           <form id="contactForm">
             <label class="small-muted">Nom</label><input type="text" id="cname" required>
